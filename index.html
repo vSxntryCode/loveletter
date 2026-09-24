@@ -1,700 +1,109 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#f8e7e9" />
-  <title>For Alicia ❤️</title>
-  <meta name="description" content="A little reminder for Alicia." />
-  <style>
-    :root{
-      --ink:#3c171d;
-      --red:#b81431;
-      --red-dark:#821126;
-      --pink:#f4cfd4;
-      --pink-2:#fae7e9;
-      --cream:#fffaf1;
-      --paper:#fffdf8;
-      --shadow:0 18px 55px rgba(91,28,39,.16);
-      --soft-shadow:0 12px 30px rgba(91,28,39,.12);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at 14% 5%, rgba(255,255,255,.95) 0 8%, transparent 28%),
-        linear-gradient(180deg,#f8e1e4 0%,#fdeef0 48%,#fff4ea 100%);
-      font-family: Georgia, "Times New Roman", serif;
-      overflow-x:hidden;
-    }
-
-    button{font:inherit}
-    .script{font-family:"Segoe Script","Bradley Hand","Brush Script MT",cursive}
-    .type{font-family:"Courier New",Courier,monospace}
-    .wrap{width:min(100% - 28px,820px);margin-inline:auto}
-
-    .floating-decor{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      overflow:hidden;
-      z-index:0;
-      opacity:.72;
-    }
-    .floating-decor span{
-      position:absolute;
-      filter:drop-shadow(0 4px 8px rgba(90,10,25,.13));
-      user-select:none;
-    }
-    .d1{left:2%;top:9%;font-size:46px;transform:rotate(-13deg)}
-    .d2{right:1%;top:21%;font-size:60px;transform:rotate(17deg)}
-    .d3{left:4%;top:65%;font-size:52px;transform:rotate(9deg)}
-    .d4{right:5%;top:78%;font-size:50px;transform:rotate(-10deg)}
-    .d5{left:14%;top:36%;font-size:26px}
-    .d6{right:14%;top:50%;font-size:25px}
-
-    main{position:relative;z-index:1}
-
-    .hero{
-      min-height:100svh;
-      display:grid;
-      place-items:center;
-      padding:30px 0 42px;
-      text-align:center;
-      position:relative;
-    }
-    .hero-inner{width:min(100% - 34px,680px)}
-    .eyebrow{
-      text-transform:uppercase;
-      letter-spacing:.24em;
-      font:700 12px/1.2 Arial,sans-serif;
-      color:var(--red-dark);
-      opacity:.75;
-      margin-bottom:18px;
-    }
-    .hero h1{
-      margin:0 0 14px;
-      color:var(--red);
-      font-size:clamp(46px,12vw,84px);
-      font-weight:500;
-      line-height:.95;
-    }
-    .hero-note{
-      margin:0 auto 30px;
-      max-width:480px;
-      font-size:18px;
-      line-height:1.55;
-      color:#70404a;
-    }
-
-    .envelope-wrap{
-      width:min(94vw,560px);
-      margin:0 auto;
-      perspective:1200px;
-    }
-    .envelope{
-      aspect-ratio:1.55/1;
-      position:relative;
-      border:0;
-      width:100%;
-      cursor:pointer;
-      background:transparent;
-      padding:0;
-      filter:drop-shadow(0 24px 26px rgba(85,20,32,.18));
-      -webkit-tap-highlight-color:transparent;
-    }
-    .env-back{
-      position:absolute;
-      inset:7% 3% 3%;
-      background:#fff9ef;
-      border:1px solid #ead7ce;
-      border-radius:3px;
-      overflow:hidden;
-    }
-    .env-back:before,.env-back:after{
-      content:"";
-      position:absolute;
-      bottom:-1px;
-      width:70%;
-      height:100%;
-      background:#f6ecdf;
-      z-index:3;
-    }
-    .env-back:before{
-      left:-12%;
-      clip-path:polygon(0 0,100% 65%,100% 100%,0 100%);
-    }
-    .env-back:after{
-      right:-12%;
-      clip-path:polygon(100% 0,0 65%,0 100%,100% 100%);
-    }
-    .letter-peek{
-      position:absolute;
-      left:13%;
-      right:13%;
-      bottom:17%;
-      height:64%;
-      border:1px solid #ead9d0;
-      background:var(--paper);
-      box-shadow:0 4px 12px rgba(70,20,30,.08);
-      display:grid;
-      place-items:center;
-      transition:transform .85s cubic-bezier(.2,.75,.25,1),bottom .85s;
-      z-index:2;
-    }
-    .letter-peek b{
-      font-size:clamp(28px,8vw,44px);
-      color:var(--red);
-      font-weight:500;
-    }
-    .env-flap{
-      position:absolute;
-      left:3%;
-      right:3%;
-      top:7%;
-      height:49%;
-      background:#fff7eb;
-      border:1px solid #ead7ce;
-      clip-path:polygon(0 0,100% 0,50% 100%);
-      transform-origin:50% 0;
-      transition:transform .8s cubic-bezier(.25,.7,.25,1);
-      z-index:6;
-      backface-visibility:hidden;
-    }
-    .seal{
-      position:absolute;
-      z-index:8;
-      left:50%;
-      top:51%;
-      transform:translate(-50%,-50%);
-      width:78px;height:78px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:radial-gradient(circle at 35% 28%,#e85666 0 7%,#bc1532 30%,#8f1027 100%);
-      color:white;
-      font-size:32px;
-      border:2px solid rgba(120,0,22,.18);
-      box-shadow:0 8px 18px rgba(96,13,31,.22);
-      transition:transform .55s,opacity .45s;
-    }
-    .env-name{
-      position:absolute;
-      z-index:9;
-      left:0;right:0;
-      bottom:13%;
-      font-size:clamp(27px,7vw,40px);
-      color:var(--red-dark);
-      text-shadow:0 2px white;
-    }
-    .open-label{
-      margin-top:28px;
-      border:0;
-      border-radius:999px;
-      padding:14px 26px;
-      background:#fffdf8;
-      color:var(--red-dark);
-      font:700 13px/1 Arial,sans-serif;
-      letter-spacing:.2em;
-      box-shadow:var(--soft-shadow);
-      cursor:pointer;
-    }
-
-    body.opened .env-flap{transform:rotateX(180deg);z-index:1}
-    body.opened .seal{transform:translate(-50%,-50%) scale(.4);opacity:0}
-    body.opened .letter-peek{transform:translateY(-64%);bottom:12%;z-index:5}
-    body.opened .env-name{opacity:0;transition:opacity .25s}
-    body.opened .open-label{opacity:.55}
-
-    .content{
-      opacity:0;
-      transform:translateY(28px);
-      transition:opacity .7s .55s,transform .7s .55s;
-      pointer-events:none;
-      padding-bottom:80px;
-    }
-    body.opened .content{opacity:1;transform:none;pointer-events:auto}
-
-    .section{padding:54px 0}
-    .paper{
-      background:rgba(255,253,248,.96);
-      border:1px solid rgba(176,94,104,.20);
-      border-radius:3px;
-      padding:clamp(28px,7vw,58px);
-      box-shadow:var(--shadow);
-      position:relative;
-    }
-    .paper:before{
-      content:"";
-      position:absolute;
-      inset:12px;
-      border:1px solid rgba(184,20,49,.42);
-      pointer-events:none;
-    }
-    .paper > *{position:relative;z-index:1}
-    .letter h2{
-      font-size:clamp(32px,8vw,52px);
-      margin:0 0 24px;
-      font-weight:500;
-    }
-    .divider{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      margin:16px 0 28px;
-      color:var(--red);
-    }
-    .divider:before,.divider:after{content:"";height:1px;background:#d88d99;flex:1}
-    .letter p{
-      font-size:clamp(17px,4.3vw,22px);
-      line-height:1.72;
-      margin:0 0 18px;
-    }
-    .letter strong{color:var(--red-dark)}
-    .signature{
-      text-align:right;
-      font-size:clamp(35px,9vw,58px);
-      color:var(--red);
-      margin-top:30px;
-      padding-right:12px;
-    }
-
-    .section-title{
-      text-align:center;
-      margin:0 0 30px;
-      color:var(--red-dark);
-      font-size:clamp(35px,9vw,58px);
-      font-weight:500;
-    }
-    .section-sub{
-      text-align:center;
-      max-width:560px;
-      margin:-15px auto 34px;
-      color:#80505a;
-      font-size:16px;
-      line-height:1.55;
-    }
-
-    .scrapbook{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:28px 18px;
-      padding:18px 2px;
-    }
-    .polaroid{
-      background:#fffdf8;
-      padding:10px 10px 38px;
-      box-shadow:0 12px 24px rgba(75,24,34,.14);
-      position:relative;
-      transform:rotate(var(--r));
-      min-width:0;
-    }
-    .polaroid:nth-child(3n){grid-column:1/-1;width:64%;justify-self:center}
-    .photo{
-      aspect-ratio:4/5;
-      background:
-        linear-gradient(145deg,rgba(255,255,255,.7),rgba(255,255,255,.05)),
-        repeating-linear-gradient(45deg,#efd8dc 0 12px,#f9e9eb 12px 24px);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-      border:1px solid #ebdadd;
-      color:#9d6e76;
-      font:600 11px/1.35 Arial,sans-serif;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      text-align:center;
-      padding:12px;
-    }
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .caption{
-      position:absolute;
-      left:12px;right:12px;bottom:10px;
-      text-align:center;
-      font-size:clamp(17px,4.8vw,25px);
-      color:#462027;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .tape{
-      position:absolute;
-      width:68px;height:20px;
-      top:-8px;left:50%;
-      transform:translateX(-50%) rotate(-3deg);
-      background:rgba(247,218,192,.72);
-      box-shadow:0 1px 2px rgba(0,0,0,.07);
-      z-index:3;
-    }
-
-    .underline-card{
-      background:#fff4f4;
-      border-radius:18px;
-      padding:30px 24px;
-      box-shadow:var(--soft-shadow);
-      font:700 clamp(23px,6.3vw,37px)/1.42 Arial,sans-serif;
-      position:relative;
-    }
-    .underline-card small{
-      display:block;
-      font:500 13px/1.2 Arial,sans-serif;
-      color:#8a5962;
-      margin-bottom:20px;
-      letter-spacing:.05em;
-    }
-    mark{
-      background:linear-gradient(transparent 52%,#f6d666 52% 91%,transparent 91%);
-      color:inherit;
-    }
-    .circle{
-      border:2px solid #e7829b;
-      padding:0 .16em;
-      border-radius:999px;
-    }
-    .under{
-      text-decoration:underline;
-      text-decoration-color:#bd1734;
-      text-decoration-thickness:2px;
-      text-underline-offset:7px;
-    }
-
-    .promise-grid{
-      display:grid;
-      gap:12px;
-    }
-    .promise{
-      background:rgba(255,253,248,.84);
-      border:1px solid rgba(177,63,82,.16);
-      border-radius:18px;
-      padding:18px 20px;
-      display:flex;
-      align-items:flex-start;
-      gap:14px;
-      box-shadow:0 8px 18px rgba(82,21,32,.07);
-    }
-    .promise .heart{font-size:22px;line-height:1.2}
-    .promise b{
-      display:block;
-      margin-bottom:5px;
-      font:700 15px/1.2 Arial,sans-serif;
-      color:var(--red-dark);
-    }
-    .promise span{
-      font-size:16px;
-      line-height:1.48;
-      color:#643842;
-    }
-
-    .kiss-card{
-      min-height:440px;
-      background:linear-gradient(180deg,#ffecee,#f9dce0);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      padding:36px 24px;
-      cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
-      user-select:none;
-    }
-    .kiss-card:after{
-      content:"";
-      position:absolute;
-      inset:14px;
-      border:1px solid rgba(178,18,46,.18);
-      border-radius:18px;
-      pointer-events:none;
-    }
-    .kiss-center{position:relative;z-index:2;pointer-events:none}
-    .kiss-big{font-size:84px;display:block;filter:drop-shadow(0 10px 9px rgba(102,19,35,.14))}
-    .kiss-card h3{font-size:40px;margin:10px 0 10px;color:var(--red);font-weight:500}
-    .kiss-card p{margin:0;color:#7c4852;font-size:16px;line-height:1.5}
-    .kiss-pop{
-      position:absolute;
-      transform:translate(-50%,-50%) scale(.2) rotate(var(--rot));
-      animation:pop .95s ease-out forwards;
-      font-size:var(--size);
-      z-index:3;
-      pointer-events:none;
-    }
-    @keyframes pop{
-      0%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(var(--rot))}
-      30%{opacity:1}
-      100%{opacity:0;transform:translate(-50%,-120%) scale(1.2) rotate(var(--rot))}
-    }
-
-    .final-card{
-      text-align:center;
-      padding:54px 24px;
-    }
-    .final-card .mini-heart{
-      width:92px;height:92px;
-      border-radius:50%;
-      background:#f3cdd2;
-      display:grid;place-items:center;
-      margin:0 auto 20px;
-      font-size:45px;
-    }
-    .final-card h2{
-      margin:0 0 14px;
-      font-size:clamp(38px,10vw,68px);
-      color:var(--red-dark);
-      font-weight:500;
-    }
-    .final-card p{
-      max-width:570px;
-      margin:0 auto;
-      font-size:19px;
-      line-height:1.65;
-      color:#653741;
-    }
-    .forever{
-      margin-top:28px;
-      font-size:34px;
-      color:var(--red);
-    }
-
-    .tiny-note{
-      text-align:center;
-      color:#8b5b64;
-      font:12px/1.5 Arial,sans-serif;
-      padding:18px 14px 36px;
-    }
-
-    @media (min-width:680px){
-      .scrapbook{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 24px}
-      .polaroid:nth-child(3n){grid-column:auto;width:auto}
-      .promise-grid{grid-template-columns:1fr 1fr}
-    }
-
-    @media (prefers-reduced-motion:reduce){
-      *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7e3e7">
+<title>For Alicia ❤️</title>
+<style>
+:root{--red:#b31938;--wine:#65172a;--ink:#3d1d25;--pink:#f7dfe4;--paper:#fffaf2;--blue:#6e83cc;--blue2:#8fa4e8;--lav:#8c79c6;--shadow:0 18px 45px rgba(76,20,35,.17)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(#f5dfe4 0%,#fcecef 43%,#fff3eb 100%);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit}.script{font-family:"Segoe Script","Bradley Hand","Brush Script MT",cursive}.type{font-family:"Courier New",monospace}.wrap{width:min(100% - 28px,780px);margin:auto}
+.flowers{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.82}.flower{position:absolute;width:92px;height:92px;filter:drop-shadow(0 7px 8px rgba(49,54,119,.12))}.f1{left:-26px;top:8%;transform:rotate(-19deg)}.f2{right:-32px;top:27%;transform:rotate(23deg) scale(.9)}.f3{left:-25px;top:61%;transform:rotate(12deg) scale(.8)}.f4{right:-27px;top:78%;transform:rotate(-15deg) scale(.92)}
+main{position:relative;z-index:1}.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:32px 16px 46px}.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#8e4352;margin-bottom:16px}.hero h1{font-size:clamp(52px,14vw,88px);font-weight:500;color:var(--red);line-height:.95;margin:0 0 12px}.hero p{max-width:460px;margin:0 auto 28px;color:#77414d;font-size:17px;line-height:1.55}
+.envelope{width:min(92vw,520px);aspect-ratio:1.5;position:relative;border:0;background:transparent;cursor:pointer;filter:drop-shadow(0 22px 25px rgba(81,20,32,.18));perspective:1000px;-webkit-tap-highlight-color:transparent}.envbody{position:absolute;inset:8% 2% 2%;background:#fff9ef;border:1px solid #e6d4cc;overflow:hidden}.envbody:before,.envbody:after{content:"";position:absolute;bottom:0;width:70%;height:100%;background:#f6ecdf;z-index:3}.envbody:before{left:-12%;clip-path:polygon(0 0,100% 66%,100% 100%,0 100%)}.envbody:after{right:-12%;clip-path:polygon(100% 0,0 66%,0 100%,100% 100%)}.peek{position:absolute;left:12%;right:12%;bottom:16%;height:64%;background:var(--paper);border:1px solid #e7d7cf;display:grid;place-items:center;z-index:2;transition:.85s cubic-bezier(.2,.8,.2,1)}.peek b{color:var(--red);font-size:clamp(29px,8vw,45px);font-weight:500}.flap{position:absolute;left:2%;right:2%;top:8%;height:49%;background:#fff7eb;border:1px solid #e6d4cc;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;z-index:6;transition:transform .8s}.seal{position:absolute;left:50%;top:51%;transform:translate(-50%,-50%);z-index:8;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 28%,#e96778,#af1735 45%,#7e1128);color:#fff;font-size:30px;box-shadow:0 8px 18px #77122644;transition:.5s}.to{position:absolute;left:0;right:0;bottom:12%;z-index:9;color:var(--wine);font-size:35px;transition:.3s}.tap{margin-top:25px;border:0;background:#fffdf8;color:#8a1730;border-radius:999px;padding:14px 25px;letter-spacing:.18em;font:700 12px Arial,sans-serif;box-shadow:0 10px 25px #65172a1c}
+body.open .flap{transform:rotateX(180deg);z-index:1}body.open .seal{opacity:0;transform:translate(-50%,-50%) scale(.3)}body.open .peek{transform:translateY(-64%);z-index:5}body.open .to{opacity:0}.content{opacity:0;transform:translateY(25px);pointer-events:none;transition:.75s .55s}.open .content{opacity:1;transform:none;pointer-events:auto}.section{padding:52px 0}
+.paper{background:#fffdf8;border:1px solid #dca7b1;border-radius:4px;padding:clamp(29px,7vw,56px);box-shadow:var(--shadow);position:relative}.paper:after{content:"";position:absolute;inset:12px;border:1px solid #bc24465c;pointer-events:none}.paper>*{position:relative;z-index:1}.paper h2{font-size:clamp(31px,8vw,50px);margin:0 0 18px;font-weight:500}.divider{display:flex;gap:13px;align-items:center;color:var(--red);margin:18px 0 27px}.divider:before,.divider:after{content:"";height:1px;flex:1;background:#d68d9a}.letter p{font-size:clamp(17px,4.3vw,21px);line-height:1.72;margin:0 0 18px}.letter strong{color:#8f1731}.sig{text-align:right;color:var(--red);font-size:44px;margin-top:25px}
+.title{text-align:center;font-weight:500;color:var(--wine);font-size:clamp(37px,9vw,58px);margin:0 0 8px}.sub{text-align:center;color:#835461;margin:0 auto 34px;max-width:520px;line-height:1.55}
+.scrapbook{display:grid;grid-template-columns:1fr 1fr;gap:29px 16px;padding:14px 3px}.polaroid{margin:0;background:#fffdf9;padding:9px 9px 40px;box-shadow:0 12px 25px #4f1d291f;position:relative;transform:rotate(var(--r));min-width:0}.polaroid.wide{grid-column:1/-1;width:69%;justify-self:center}.polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}.polaroid.land img{aspect-ratio:4/3}.caption{position:absolute;left:9px;right:9px;bottom:9px;font-size:clamp(16px,4.3vw,23px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}.tape{position:absolute;width:66px;height:18px;top:-8px;left:50%;transform:translateX(-50%) rotate(-4deg);background:#efd6bcbb;z-index:3}
+.blue-card{background:#eef1ff;border:1px solid #b7c1eb;border-radius:22px;padding:28px 22px;box-shadow:0 12px 28px #3e4b8d18;position:relative;overflow:hidden}.blue-card h3{font-size:38px;font-weight:500;color:#5268b3;margin:0 0 15px}.blue-card p{font-size:18px;line-height:1.65;margin:0}.mini-flower{position:absolute;width:105px;height:105px;right:-24px;bottom:-24px;opacity:.62}
+.lines{background:#fff4f5;border-radius:17px;padding:28px 23px;box-shadow:0 12px 28px #58172716;font:700 clamp(22px,6vw,34px)/1.43 Arial,sans-serif}.lines small{display:block;color:#8a5962;font:500 12px Arial,sans-serif;margin-bottom:17px;letter-spacing:.05em}.circle{border:2px solid #df7b96;border-radius:999px;padding:0 .14em}.under{text-decoration:underline;text-decoration-color:#a91432;text-underline-offset:7px;text-decoration-thickness:2px}mark{background:linear-gradient(transparent 53%,#d7dc79 53% 91%,transparent 91%);color:inherit}
+.promises{display:grid;gap:12px}.promise{background:#fffdf8d9;border:1px solid #c26b7d35;border-radius:18px;padding:18px;display:flex;gap:13px;box-shadow:0 8px 18px #65172a0c}.promise i{font-style:normal;font-size:22px}.promise b{display:block;color:#8c1832;font:700 15px Arial,sans-serif;margin-bottom:5px}.promise span{color:#613843;line-height:1.5}
+.kiss{min-height:410px;background:linear-gradient(#fff0f2,#f7dce2);border-radius:25px;box-shadow:var(--shadow);display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent}.kiss .center{pointer-events:none}.kiss .big{font-size:80px}.kiss h3{font-size:42px;color:var(--red);font-weight:500;margin:5px}.kiss p{color:#7b4b55}.pop{position:absolute;transform:translate(-50%,-50%);font-size:var(--s);animation:pop .9s ease-out forwards}@keyframes pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.25)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,-135%) scale(1.2)}}
+.final{text-align:center}.heartbubble{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:#f1ccd3;margin:0 auto 18px;font-size:42px}.final h2{font-size:clamp(39px,10vw,64px);color:var(--wine);font-weight:500;margin:0 0 14px}.final p{font-size:18px;line-height:1.68;max-width:560px;margin:auto}.forever{color:var(--red);font-size:35px;margin-top:24px}.foot{text-align:center;color:#8a5a65;font:12px Arial,sans-serif;padding:7px 14px 40px}
+@media(min-width:680px){.scrapbook{grid-template-columns:repeat(3,1fr);gap:36px 23px}.polaroid.wide{grid-column:auto;width:auto}.promises{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+</style>
 </head>
 <body>
-  <div class="floating-decor" aria-hidden="true">
-    <span class="d1">💋</span>
-    <span class="d2">♡</span>
-    <span class="d3">💋</span>
-    <span class="d4">♥</span>
-    <span class="d5">♡</span>
-    <span class="d6">♥</span>
-  </div>
+<div class="flowers" aria-hidden="true">
+<svg class="flower f1" viewBox="0 0 100 100"><g fill="#748bd9"><ellipse cx="50" cy="20" rx="10" ry="24"/><ellipse cx="50" cy="80" rx="10" ry="24"/><ellipse cx="20" cy="50" rx="24" ry="10"/><ellipse cx="80" cy="50" rx="24" ry="10"/><ellipse cx="29" cy="29" rx="10" ry="23" transform="rotate(-45 29 29)"/><ellipse cx="71" cy="71" rx="10" ry="23" transform="rotate(-45 71 71)"/><ellipse cx="71" cy="29" rx="10" ry="23" transform="rotate(45 71 29)"/><ellipse cx="29" cy="71" rx="10" ry="23" transform="rotate(45 29 71)"/></g><circle cx="50" cy="50" r="15" fill="#5650a5"/></svg>
+<svg class="flower f2" viewBox="0 0 100 100"><g fill="#8799e3"><ellipse cx="50" cy="20" rx="10" ry="24"/><ellipse cx="50" cy="80" rx="10" ry="24"/><ellipse cx="20" cy="50" rx="24" ry="10"/><ellipse cx="80" cy="50" rx="24" ry="10"/><ellipse cx="29" cy="29" rx="10" ry="23" transform="rotate(-45 29 29)"/><ellipse cx="71" cy="71" rx="10" ry="23" transform="rotate(-45 71 71)"/><ellipse cx="71" cy="29" rx="10" ry="23" transform="rotate(45 71 29)"/><ellipse cx="29" cy="71" rx="10" ry="23" transform="rotate(45 29 71)"/></g><circle cx="50" cy="50" r="15" fill="#6354aa"/></svg>
+<svg class="flower f3" viewBox="0 0 100 100"><g fill="#7185cf"><ellipse cx="50" cy="20" rx="10" ry="24"/><ellipse cx="50" cy="80" rx="10" ry="24"/><ellipse cx="20" cy="50" rx="24" ry="10"/><ellipse cx="80" cy="50" rx="24" ry="10"/><ellipse cx="29" cy="29" rx="10" ry="23" transform="rotate(-45 29 29)"/><ellipse cx="71" cy="71" rx="10" ry="23" transform="rotate(-45 71 71)"/><ellipse cx="71" cy="29" rx="10" ry="23" transform="rotate(45 71 29)"/><ellipse cx="29" cy="71" rx="10" ry="23" transform="rotate(45 29 71)"/></g><circle cx="50" cy="50" r="15" fill="#5650a5"/></svg>
+<svg class="flower f4" viewBox="0 0 100 100"><g fill="#91a2e5"><ellipse cx="50" cy="20" rx="10" ry="24"/><ellipse cx="50" cy="80" rx="10" ry="24"/><ellipse cx="20" cy="50" rx="24" ry="10"/><ellipse cx="80" cy="50" rx="24" ry="10"/><ellipse cx="29" cy="29" rx="10" ry="23" transform="rotate(-45 29 29)"/><ellipse cx="71" cy="71" rx="10" ry="23" transform="rotate(-45 71 71)"/><ellipse cx="71" cy="29" rx="10" ry="23" transform="rotate(45 71 29)"/><ellipse cx="29" cy="71" rx="10" ry="23" transform="rotate(45 29 71)"/></g><circle cx="50" cy="50" r="15" fill="#6257ad"/></svg>
+</div>
+<main>
+<section class="hero"><div>
+<div class="eyebrow">sealed with a kiss</div>
+<h1 class="script">For Alicia</h1>
+<p>For the days where everything feels like a little too much — this is what I want you to remember.</p>
+<button class="envelope" id="env"><span class="envbody"></span><span class="peek"><b class="script">open me ❤️</b></span><span class="flap"></span><span class="seal">♥</span><span class="to script">To Alicia</span></button><br>
+<button class="tap" id="tap">TAP TO OPEN</button>
+</div></section>
+<div class="content" id="content">
 
-  <main>
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <div class="eyebrow">sealed with a kiss</div>
-        <h1 class="script">For Alicia</h1>
-        <p class="hero-note">Just a little reminder of what I see when I look at you.</p>
+<section class="section"><div class="wrap"><article class="paper letter">
+<h2 class="type">Dear Alicia,</h2><div class="divider">♥</div>
+<p>I know life has been throwing a lot at you lately. You have so much on your shoulders, and somehow you still keep showing up for everyone around you.</p>
+<p>I see how much you do. I see you being a mum even when you are exhausted, sick, overwhelmed, or when everything decides to happen at once. I see how deeply you care, especially for Navy. And I need you to know that <strong>I am so proud of you.</strong></p>
+<p>Not because you always hold it together. You should not have to. I am proud of you because you keep trying, because you love hard, because you care, and because even on the days you feel like you are struggling, I still see the strength in you.</p>
+<p>With me, you never need to pretend you are okay. You can cry. You can rant. You can be quiet. You can tell me you have had enough. You can sit on the phone with me and not say a single thing. <strong>You do not have to make yourself easier for me to love.</strong></p>
+<p>I want to be the man who makes your life feel lighter, not heavier. I want to cook for you, look after you, take things off your plate when I can, make you laugh when your head is full, hold you when words are useless, and be someone you know will actually show up.</p>
+<p>I cannot fix every hard thing for you. But I can make sure you do not feel like you have to face every hard moment alone.</p>
+<p>You spend so much time looking after other people. <strong>You deserve to be looked after too.</strong> And whenever you forget how well you are doing, I will remind you.</p>
+<div class="sig script">Love, Enzo ❤️</div>
+</article></div></section>
 
-        <div class="envelope-wrap">
-          <button class="envelope" id="envelope" aria-label="Open your letter">
-            <span class="env-back"></span>
-            <span class="letter-peek"><b class="script">open me ❤️</b></span>
-            <span class="env-flap"></span>
-            <span class="seal">♥</span>
-            <span class="env-name script">To Alicia</span>
-          </button>
-          <button class="open-label" id="openBtn">TAP TO OPEN</button>
-        </div>
-      </div>
-    </section>
+<section class="section"><div class="wrap">
+<h2 class="title script">The little things I see</h2>
+<p class="sub">Not just the polished moments. The real ones. The silly ones. The quiet ones. All of it.</p>
+<div class="scrapbook">
+<figure class="polaroid land" style="--r:-3deg"><span class="tape"></span><img src="assets/restaurant.webp" alt="Alicia at dinner"><figcaption class="caption script">I love looking at you ❤️</figcaption></figure>
+<figure class="polaroid" style="--r:2.5deg"><span class="tape"></span><img src="assets/candid.webp" alt="Alicia and Enzo together"><figcaption class="caption script">I love being close to you</figcaption></figure>
+<figure class="polaroid wide land" style="--r:-1.5deg"><span class="tape"></span><img src="assets/mumlife.webp" alt="Alicia having a funny mum moment"><figcaption class="caption script">even the chaos 🥹</figcaption></figure>
+<figure class="polaroid" style="--r:2deg"><span class="tape"></span><img src="assets/cuddle.webp" alt="A quiet moment together"><figcaption class="caption script">the quiet moments ❤️</figcaption></figure>
+<figure class="polaroid land" style="--r:-2.5deg"><span class="tape"></span><img src="assets/cat.webp" alt="A little cat"><figcaption class="caption script">our little world</figcaption></figure>
+</div>
+</div></section>
 
-    <div class="content" id="content">
-      <section class="section">
-        <div class="wrap">
-          <article class="paper letter">
-            <h2 class="type">Dear Alicia,</h2>
-            <div class="divider">♥</div>
+<section class="section"><div class="wrap"><div class="blue-card">
+<h3 class="script">A little cornflower reminder</h3>
+<p>You told me you like that soft blue-purple cornflower colour, so I wanted it here too. Something small and pretty in the middle of everything — because little details about you matter to me.</p>
+<svg class="mini-flower" viewBox="0 0 100 100"><g fill="#778bd8"><ellipse cx="50" cy="20" rx="10" ry="24"/><ellipse cx="50" cy="80" rx="10" ry="24"/><ellipse cx="20" cy="50" rx="24" ry="10"/><ellipse cx="80" cy="50" rx="24" ry="10"/><ellipse cx="29" cy="29" rx="10" ry="23" transform="rotate(-45 29 29)"/><ellipse cx="71" cy="71" rx="10" ry="23" transform="rotate(-45 71 71)"/><ellipse cx="71" cy="29" rx="10" ry="23" transform="rotate(45 71 29)"/><ellipse cx="29" cy="71" rx="10" ry="23" transform="rotate(45 29 71)"/></g><circle cx="50" cy="50" r="15" fill="#5c51a8"/></svg>
+</div></div></section>
 
-            <p>This is not here because I think you need fixing. It is here because I <strong>see you</strong>.</p>
+<section class="section"><div class="wrap">
+<h2 class="title script">The lines I'd underline</h2>
+<div class="lines"><small>things I hope you never forget</small>
+I love the <span class="circle">way you care</span>, even when you are exhausted. I love the way I <span class="under">melt into you</span>, the way you make me laugh, and the little bits of yourself you slowly let me see. I <mark>notice more than you think</mark>. You never have to be perfect with me.
+</div></div></section>
 
-            <p>I see how much you carry. I see you being a mum even when you are exhausted, sick, overwhelmed, or when everything seems to happen at once. I see how much of yourself you give to the people you love, even on the days where you barely have anything left for yourself.</p>
+<section class="section"><div class="wrap">
+<h2 class="title script">What I want to be for you</h2><p class="sub">Not another thing you have to manage. Someone who makes things easier.</p>
+<div class="promises">
+<div class="promise"><i>❤️</i><div><b>Someone you can be honest with</b><span>No perfect words required. If you are upset, overwhelmed, angry or sad, I want the real answer.</span></div></div>
+<div class="promise"><i>❤️</i><div><b>Someone who looks after you too</b><span>You give so much of yourself. I want you to know what it feels like to have that care returned.</span></div></div>
+<div class="promise"><i>❤️</i><div><b>Someone calm when life is chaotic</b><span>I do not need to solve everything. Sometimes I just need to stay, listen, and remind you that you are not alone.</span></div></div>
+<div class="promise"><i>❤️</i><div><b>Someone who shows up</b><span>Cooking for you, planning things, helping where I can, holding you, listening — the small consistent things.</span></div></div>
+</div></div></section>
 
-            <p>And I need you to know something: <strong>I am so proud of you.</strong> Not because you never struggle. Not because you always hold it together. I am proud of you because you keep showing up, because you care so deeply, and because there is so much strength in you even when you do not feel strong at all.</p>
+<section class="section"><div class="wrap"><h2 class="title script">Leave a kiss here</h2><p class="sub">Tap anywhere. Every one is coming straight back to you.</p>
+<div class="kiss" id="kiss"><div class="center"><div class="big">💋</div><h3 class="script">all yours</h3><p>tap anywhere to leave a kiss</p></div></div>
+</div></section>
 
-            <p>You do not have to pretend you are okay around me. You can cry. You can rant. You can be quiet. You can tell me you have had enough for the day. You can just sit on the phone with me and say nothing. I never want you to feel like you have to make yourself easier for me to love.</p>
-
-            <p>I want to be the man who makes your world feel a little lighter. I want to cook for you, take things off your plate, make you laugh when your head is full, hold you when words are not enough, and be someone you know is going to show up. I cannot fix every hard thing for you, but I can make sure <strong>you do not have to face every hard moment alone.</strong></p>
-
-            <p>You spend so much time looking after everyone else. You deserve to be looked after too.</p>
-
-            <p>And on the days where you cannot see how well you are doing, I will remind you until you can.</p>
-
-            <div class="signature script">Love, Enzo ❤️</div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="wrap">
-          <h2 class="section-title script">The little things I love</h2>
-          <p class="section-sub">The photos can come later. I already know what I want these moments to say.</p>
-
-          <div class="scrapbook">
-            <figure class="polaroid" style="--r:-3deg">
-              <span class="tape"></span>
-              <div class="photo">our photo<br>goes here</div>
-              <figcaption class="caption script">I love your smile ❤️</figcaption>
-            </figure>
-
-            <figure class="polaroid" style="--r:2.5deg">
-              <span class="tape"></span>
-              <div class="photo">our photo<br>goes here</div>
-              <figcaption class="caption script">I love being close to you</figcaption>
-            </figure>
-
-            <figure class="polaroid" style="--r:-1.5deg">
-              <span class="tape"></span>
-              <div class="photo">our photo<br>goes here</div>
-              <figcaption class="caption script">I love making you laugh</figcaption>
-            </figure>
-
-            <figure class="polaroid" style="--r:3deg">
-              <span class="tape"></span>
-              <div class="photo">our photo<br>goes here</div>
-              <figcaption class="caption script">I love our little moments</figcaption>
-            </figure>
-
-            <figure class="polaroid" style="--r:-2deg">
-              <span class="tape"></span>
-              <div class="photo">our photo<br>goes here</div>
-              <figcaption class="caption script">I love looking after you</figcaption>
-            </figure>
-
-            <figure class="polaroid" style="--r:2deg">
-              <span class="tape"></span>
-              <div class="photo">our photo<br>goes here</div>
-              <figcaption class="caption script">I love you being you</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="wrap">
-          <h2 class="section-title script">The lines I'd underline</h2>
-          <div class="underline-card">
-            <small>for the days you need the reminder</small>
-            I love the <span class="circle">way you care</span>, even when you are tired.
-            I love the way you make me laugh, the way I <span class="under">melt into you</span>,
-            and the way you let me see more of the real you.
-            I notice <mark>every little thing</mark> you do for the people you love.
-            Being close to you feels like somewhere I want to stay.
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="wrap">
-          <h2 class="section-title script">What I want you to feel with me</h2>
-          <div class="promise-grid">
-            <div class="promise">
-              <div class="heart">❤️</div>
-              <div><b>Safe to be honest</b><span>You never have to hide a bad day from me or find the perfect words.</span></div>
-            </div>
-            <div class="promise">
-              <div class="heart">❤️</div>
-              <div><b>Looked after too</b><span>You give so much. I want to return that care instead of only receiving it.</span></div>
-            </div>
-            <div class="promise">
-              <div class="heart">❤️</div>
-              <div><b>No pressure to be perfect</b><span>I do not only want the happy, easy version of you. The messy days count too.</span></div>
-            </div>
-            <div class="promise">
-              <div class="heart">❤️</div>
-              <div><b>A man you can rely on</b><span>Not because I can solve everything, but because I will listen, show up, and stay consistent.</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="wrap">
-          <h2 class="section-title script">Leave a kiss here</h2>
-          <p class="section-sub">Tap anywhere on the card. Consider every one of them returned.</p>
-          <div class="kiss-card" id="kissCard" role="button" tabindex="0" aria-label="Tap to leave a kiss">
-            <div class="kiss-center">
-              <span class="kiss-big">💋</span>
-              <h3 class="script">all yours</h3>
-              <p>tap anywhere to leave a kiss</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="wrap">
-          <article class="paper final-card">
-            <div class="mini-heart">❤️</div>
-            <h2 class="script">One last thing...</h2>
-            <p>
-              If today feels heavy, you do not need to carry tomorrow as well.
-              Just get through today. Eat something, rest when you can, breathe, let yourself feel whatever you feel,
-              and remember there is someone here who is ridiculously proud of you.
-            </p>
-            <div class="forever script">I'm here, beautiful. ❤️</div>
-          </article>
-        </div>
-      </section>
-
-      <div class="tiny-note">made with far too much love for Alicia ♡</div>
-    </div>
-  </main>
-
-  <script>
-    var envelope = document.getElementById('envelope');
-    var openBtn = document.getElementById('openBtn');
-    var content = document.getElementById('content');
-    var kissCard = document.getElementById('kissCard');
-
-    function openLetter(){
-      if(document.body.classList.contains('opened')){
-        content.scrollIntoView({behavior:'smooth',block:'start'});
-        return;
-      }
-      document.body.classList.add('opened');
-      openBtn.textContent = 'OPENED WITH LOVE';
-      window.setTimeout(function(){
-        content.scrollIntoView({behavior:'smooth',block:'start'});
-      }, 1150);
-    }
-
-    envelope.addEventListener('click',openLetter);
-    openBtn.addEventListener('click',openLetter);
-
-    function makeKiss(x,y){
-      var el = document.createElement('span');
-      var choices = ['💋','❤️','♡','♥'];
-      el.className = 'kiss-pop';
-      el.textContent = choices[Math.floor(Math.random()*choices.length)];
-      el.style.left = x + 'px';
-      el.style.top = y + 'px';
-      el.style.setProperty('--rot', (Math.random()*30-15) + 'deg');
-      el.style.setProperty('--size', (34+Math.random()*35) + 'px');
-      kissCard.appendChild(el);
-      window.setTimeout(function(){ el.remove(); }, 1000);
-    }
-
-    kissCard.addEventListener('pointerdown',function(e){
-      var r = kissCard.getBoundingClientRect();
-      makeKiss(e.clientX-r.left,e.clientY-r.top);
-    });
-
-    kissCard.addEventListener('keydown',function(e){
-      if(e.key === 'Enter' || e.key === ' '){
-        e.preventDefault();
-        makeKiss(kissCard.clientWidth/2,kissCard.clientHeight/2);
-      }
-    });
-  </script>
+<section class="section"><div class="wrap"><article class="paper final"><div class="heartbubble">❤️</div>
+<h2 class="script">One last thing...</h2>
+<p>If today feels heavy, you do not need to carry tomorrow at the same time. Just get through today. Rest when you can. Eat something. Let yourself feel whatever you feel. You do not have to be strong every second.</p>
+<p style="margin-top:14px">I see how hard you are trying, Alicia. I see how much you care. And I am ridiculously proud of you.</p>
+<div class="forever script">I'm here, beautiful. ❤️</div>
+</article></div></section>
+<div class="foot">made with an unreasonable amount of love for Alicia ♡</div>
+</div>
+</main>
+<script>
+const open=()=>{if(document.body.classList.contains('open')){content.scrollIntoView({behavior:'smooth'});return}document.body.classList.add('open');tap.textContent='OPENED WITH LOVE';setTimeout(()=>content.scrollIntoView({behavior:'smooth'}),1100)};
+env.onclick=open;tap.onclick=open;
+kiss.onpointerdown=e=>{const r=kiss.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,s=document.createElement('span');s.className='pop';s.textContent=['💋','❤️','♡','♥'][Math.floor(Math.random()*4)];s.style.left=x+'px';s.style.top=y+'px';s.style.setProperty('--s',(34+Math.random()*34)+'px');kiss.appendChild(s);setTimeout(()=>s.remove(),950)}
+</script>
 </body>
 </html>
