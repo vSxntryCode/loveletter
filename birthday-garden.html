@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff0f5">
+<meta name="description" content="A little birthday bouquet made just for Alicia.">
+<title>Alicia's Birthday Bouquet ♡</title>
+<style>
+:root{--berry:#7b294b;--pink:#f9d4e3;--rose:#c6477e;--cream:#fffaf8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 12% 0%,#fff9fb 0%,transparent 39%),radial-gradient(ellipse at 95% 60%,#fbd2e3 0%,transparent 43%),linear-gradient(160deg,#ffedf4,#f7ccdc 68%,#fce4e6);color:var(--berry);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{width:min(94%,530px);margin:0 auto;padding:38px 0 42px;text-align:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.27em;font-size:10px;font-weight:800;color:#a86280}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.025em}h1{font-size:clamp(44px,11vw,68px);line-height:1.05;margin:15px 0 14px}h2{font-size:33px;line-height:1.2;margin:8px 0 17px}
+.sub{font-size:15px;line-height:1.75;max-width:380px;margin:0 auto 5px} .tiny{font-size:13px;opacity:.8}
+.game{position:relative;margin:24px auto 10px;height:336px;max-width:430px;overflow:hidden;border:1px solid #fffaf5;border-radius:26px;background:radial-gradient(circle at 50% 40%,#fff9f8 0%,#fde5ed 65%,#f8b9d0 100%);box-shadow:0 13px 45px #a64e7438;isolation:isolate}
+.game:before{content:"✦     ✧        ✦";position:absolute;top:36px;left:8%;width:84%;font-size:22px;letter-spacing:43px;color:#e5a1b9;opacity:.55}
+.flower{position:absolute;bottom:66px;width:85px;height:181px;transform-origin:50% 100%;animation:growing .58s cubic-bezier(.15,1.6,.25,1) both;filter:drop-shadow(0 4px 3px #b5628040)}
+@keyframes growing{0%{opacity:0;transform:translateX(-50%) scale(.15) rotate(-7deg)}100%{opacity:1;transform:translateX(-50%) scale(1) rotate(var(--twist))}}
+.wrapback{position:absolute;bottom:4px;left:14%;width:72%;height:135px;clip-path:polygon(0 0,100% 0,75% 100%,28% 100%);background:linear-gradient(125deg,#f9b9d1 0%,#f8dce7 38%,#f6a2c1 100%);opacity:.83;z-index:1}
+.wrapfront{position:absolute;bottom:5px;left:12%;width:76%;height:109px;clip-path:polygon(0 0,50% 35%,100% 0,70% 100%,32% 100%);background:linear-gradient(155deg,#f4a6c5,#ffdce9 47%,#ea86b0);z-index:4}
+.ribbon{position:absolute;bottom:31px;left:43%;width:16%;height:25px;z-index:5;background:#b95581;border-radius:5px;box-shadow:0 2px 4px #7c325947}
+.ribbon:before,.ribbon:after{content:"";position:absolute;top:-9px;width:27px;height:27px;border:8px solid #b95581;border-radius:100% 15% 100% 15%}
+.ribbon:before{right:45%;transform:rotate(38deg)}.ribbon:after{left:45%;transform:rotate(-38deg)}
+.empty{position:absolute;top:34%;width:100%;padding:10px;font:italic 19px Georgia,serif;color:#bf7191;transition:opacity .3s}
+.actions{display:grid;place-items:center;gap:8px;margin:19px auto}
+button{font:700 14px system-ui,sans-serif;background:var(--berry);border:0;color:#fff;padding:16px 26px;border-radius:40px;cursor:pointer;box-shadow:0 7px 17px #8e39565c;transition:transform .15s,filter .15s}
+button:hover{filter:brightness(1.12)}button:active{transform:scale(.97)}button:focus-visible{outline:3px solid #e883b2;outline-offset:4px}button:disabled{cursor:default;opacity:.68}
+.progress{font-size:13px;letter-spacing:.03em;color:#9c5575}
+.card{display:none;text-align:left;background:var(--cream);border:1px solid white;border-radius:25px;margin:32px 0 24px;padding:28px 27px;box-shadow:0 14px 35px #a64e742b;animation:slidein .65s ease both}
+.card.visible{display:block}
+@keyframes slidein{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.card p{font-size:15px;line-height:1.8;margin:0 0 17px}
+.sign{font:italic 25px Georgia,serif;color:#be5c83}
+.center{text-align:center}
+.ticket{display:none;margin:14px 0;background:linear-gradient(130deg,#fffefd,#ffe4ef);border:2px dashed #e69cb9;border-radius:18px;padding:21px;text-align:center}
+.ticket.visible{display:block;animation:slidein .6s both}
+.ticket-title{font:italic 27px Georgia,serif;margin:8px 0}
+footer{font-size:12px;color:#99526f;opacity:.8;padding-top:16px}
+.confetti{position:fixed;pointer-events:none;z-index:20;width:9px;height:14px;border-radius:2px;animation:fall 1.8s ease-in forwards}
+@keyframes fall{0%{opacity:1;transform:translateY(-30px) rotate(0)}100%{opacity:0;transform:translateY(110vh) rotate(560deg)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">9 October · Just for you</div>
+<h1>Happy 19th,<br>pretty girl ♡</h1>
+<p class="sub">Our age gap is finally a little smaller for the time being. Took you long enough 😭</p>
+<p class="sub tiny">I wanted to give you some flowers. Since I can't reach through your phone, we're doing it this way.</p>
+<section class="game" aria-label="Your virtual bouquet" id="garden">
+<div class="empty" id="empty">Your bouquet is looking a bit empty...</div>
+<div class="wrapback"></div><div id="flowers"></div><div class="wrapfront"></div><div class="ribbon"></div>
+</section>
+<div class="actions">
+<button type="button" id="add">Pick a flower ♡</button>
+<div class="progress" id="progress" aria-live="polite">0 of 5 flowers picked</div>
+</div>
+<section class="card" id="message" aria-label="Your birthday note">
+<div class="eyebrow">A little note from me</div>
+<h2>Okay, that's a pretty decent bouquet.</h2>
+<p>Happy birthday, Alicia. I hope today is full of laughing, getting spoiled, and doing whatever makes you happy. You deserve a day you can actually enjoy without having to worry about a million things.</p>
+<p>I wish I could give you these in person and steal a kiss while I'm at it. You're gorgeous, you're a massive pain in my ass sometimes, and I absolutely adore you.</p>
+<p>I'm glad I met you, my love. Here's to 19, and hopefully plenty more chances for me to annoy you in person.</p>
+<p><strong>I love you, pretty girl. ❤️</strong></p>
+<div class="sign">Love, Enzo ♡</div>
+<div class="center"><button type="button" id="extra">Wait, one more thing...</button></div>
+<div class="ticket" id="ticket" aria-live="polite">
+<div class="eyebrow">A little birthday IOU</div>
+<div class="ticket-title">One date, properly planned ♡</div>
+<p>I'll organise it. You just tell me when you're free.<br>And yes, I fully intend to spoil you.</p>
+<p class="tiny">Kisses included. Unfortunately for you.</p>
+</div>
+</section>
+<footer>Made just for Alicia ♡</footer>
+</main>
+<script>
+(()=>{
+const spots=[{x:23,y:0,t:-14,c:'#f391b7',d:'#ffc7dc'},{x:42,y:34,t:-6,c:'#a9a6e6',d:'#dfdafd'},{x:61,y:41,t:7,c:'#ec78aa',d:'#ffd4e6'},{x:78,y:4,t:12,c:'#839cdb',d:'#b6caff'},{x:51,y:4,t:0,c:'#ee9cc1',d:'#ffe3ed'}];
+const flowerHolder=document.getElementById('flowers'),btn=document.getElementById('add'),progress=document.getElementById('progress');
+let count=0;
+function makeFlower(s){
+const container=document.createElement('div');container.className='flower';container.style.left=s.x+'%';container.style.bottom=(65+s.y)+'px';container.style.setProperty('--twist',s.t+'deg');
+const petals=Array.from({length:8},(_,i)=>'<ellipse cx="45" cy="27" rx="12" ry="23" fill="'+(i%2?s.d:s.c)+'" transform="rotate('+(i*45)+' 45 49)"/>').join('');
+container.innerHTML='<svg viewBox="0 0 90 190" width="85" height="181" aria-hidden="true"><path d="M45 64 Q39 117 45 188" fill="none" stroke="#688e6d" stroke-width="5" stroke-linecap="round"/><path d="M44 144 Q8 114 15 132 Q26 147 44 149M45 160 Q78 132 78 148 Q63 165 45 164" fill="#86ad87"/>'+petals+'<circle cx="45" cy="49" r="12" fill="#ffe8a1"/><circle cx="45" cy="49" r="6" fill="#e7a965"/></svg>';
+return container;
+}
+function confetti(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const colors=['#e97ca9','#8c9cd6','#ffcf75','#fff','#d85d8c'];for(let i=0;i<38;i++){const s=document.createElement('i');s.className='confetti';s.style.left=(Math.random()*100)+'vw';s.style.top='-20px';s.style.background=colors[i%colors.length];s.style.animationDelay=(Math.random()*.65)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),2700)}}
+btn.addEventListener('click',()=>{if(count>=5)return;flowerHolder.appendChild(makeFlower(spots[count]));count++;progress.textContent=count+' of 5 flowers picked';if(count===1)document.getElementById('empty').style.opacity='0';if(count===5){btn.textContent='Bouquet complete ♡';btn.disabled=true;progress.textContent='Perfect. This one is yours.';const card=document.getElementById('message');card.classList.add('visible');confetti();setTimeout(()=>card.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'}),300)}});
+document.getElementById('extra').addEventListener('click',()=>{document.getElementById('ticket').classList.add('visible');document.getElementById('extra').style.display='none';confetti();});
+})();
+</script>
+</body></html>
