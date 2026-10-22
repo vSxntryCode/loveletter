@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f3ec">
+  <meta name="description" content="A few little things I noticed this week. Made for Alicia, with love.">
+  <meta property="og:title" content="the little things. ♡">
+  <meta property="og:description" content="Just a few things I wanted you to know.">
+  <title>the little things. | for Alicia ♡</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+    :root {
+      --paper:#f7f3ec; --cream:#fffdf9; --ink:#2e3440;
+      --muted:#747b82; --line:#e8dfd5; --blue:#7893c1;
+      --blue-soft:#e9eef7; --pink:#f5dfe0; --pink-deep:#c78494;
+      --yellow:#fff0c7; --green:#dce6d7;
+      --serif:'Playfair Display', Georgia, serif;
+      --sans:'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --mono:'DM Mono', ui-monospace, monospace;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-width:320px;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    button,a{-webkit-tap-highlight-color:transparent}
+    a{color:inherit}
+    button{font:inherit}
+    button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+    ::selection{background:#cbd9f1;color:#202b40}
+    .background{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 13% 15%,#fffaf3 0,transparent 48%),radial-gradient(ellipse at 90% 56%,#f4e8e7 0,transparent 43%),var(--paper)}
+    .background:after{content:'';position:absolute;inset:0;opacity:.15;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+    .topbar{height:76px;max-width:1190px;margin:auto;padding:0 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #e9e1d9}
+    .brand{text-decoration:none;font-family:var(--serif);font-weight:600;font-style:italic;font-size:20px;letter-spacing:-.6px}
+    .brand .star{font-style:normal;color:var(--pink-deep);font-size:25px;margin-right:5px}
+    .topright{font:10px var(--mono);letter-spacing:.16em;color:#858184;text-transform:uppercase}
+    .wrapper{max-width:1190px;margin:0 auto;padding:0 30px}
+    .hero{min-height:660px;display:grid;grid-template-columns:1.08fr .92fr;gap:35px;align-items:center;padding-top:74px;padding-bottom:85px}
+    .overline{font:11px var(--mono);text-transform:uppercase;letter-spacing:.18em;color:#807d82;display:flex;align-items:center;gap:13px}
+    .overline:before{content:'';height:1px;width:30px;background:#ae9a9b}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{font-family:var(--serif);font-weight:500}
+    h1{font-size:clamp(68px,8.5vw,124px);line-height:.96;letter-spacing:-.075em;margin:29px 0}
+    h1 em{display:block;color:var(--blue);font-weight:500;letter-spacing:-.08em}
+    .hero-copy{max-width:435px;font-size:16px;line-height:1.95;color:#676e75;margin:30px 0}
+    .hero-copy strong{color:var(--ink);font-weight:600}
+    .primary-link{display:inline-flex;align-items:center;gap:20px;text-decoration:none;border-radius:100px;background:var(--ink);color:white;padding:17px 22px 17px 25px;font-size:13px;font-weight:600;box-shadow:0 12px 27px #3d40551c;transition:transform .25s,background .25s}
+    .primary-link:hover{transform:translateY(-3px);background:#4a5971}
+    .primary-link .arrow{font-size:22px;line-height:12px;font-weight:400}
+    .hero-caption{font:11px var(--mono);color:#959394;margin-left:15px}
+    .collage{height:505px;position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center}
+    .collage:before{content:'';width:min(85%,390px);height:390px;border-radius:50%;position:absolute;background:#eae7e0;filter:blur(1px);z-index:-1;left:9%;top:8%}
+    .photo{position:absolute;background:#fffdf9;border:1px solid #e5e0d9;padding:12px 12px 18px;box-shadow:0 22px 55px #4e46521b,0 4px 7px #4e465208;width:71%;max-width:330px;transform:rotate(-6deg);top:53px;left:10%;animation:bob1 6s ease-in-out infinite}
+    .photo-art{background:#dee7f4;height:295px;position:relative;overflow:hidden}
+    .photo-art:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 29%,#fff7d7 0 45px,transparent 47px),linear-gradient(180deg,#d9e6f6 0%,#fce9dd 78%,#f6d8cb 100%)}
+    .window-frame{position:absolute;inset:26px 32px 26px;border:7px solid #fffaf3;border-radius:120px 120px 0 0;box-shadow:0 0 0 2px #e4d2c1;overflow:hidden}
+    .window-frame:before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:7px solid #fffaf3;transform:translateX(-50%)}
+    .window-frame:after{content:'';position:absolute;left:0;right:0;top:64%;border-top:7px solid #fffaf3}
+    .sun-line{position:absolute;left:26px;bottom:19px;width:90px;height:36px;background:#b7c4d6;border-radius:50% 50% 0 0;box-shadow:58px 11px 0 19px #c3cbd7,121px -3px 0 9px #9eafc4}
+    .photo-label{text-align:center;margin:14px 0 0;font:italic 16px var(--serif);color:#6c7080}
+    .sticky{position:absolute;z-index:3;right:0;bottom:58px;width:228px;min-height:196px;background:var(--yellow);padding:25px 23px 22px;box-shadow:0 14px 28px #594c351c;transform:rotate(6deg);animation:bob2 7s ease-in-out infinite}
+    .sticky:before{content:'';width:68px;height:21px;background:#c7c4b499;position:absolute;top:-12px;left:76px;transform:rotate(-4deg)}
+    .sticky-small{font:10px var(--mono);color:#94805f;letter-spacing:.11em;text-transform:uppercase;margin-bottom:12px}
+    .sticky-copy{font:italic 23px/1.42 var(--serif);color:#54505a}
+    .sticky-heart{position:absolute;bottom:15px;right:20px;font:28px var(--serif);color:#cf8991}
+    .flower-svg{position:absolute;z-index:4;width:104px;filter:drop-shadow(0 8px 8px #6e749526)}
+    .flower-a{right:25px;top:12px;transform:rotate(23deg)}
+    .flower-b{left:0;bottom:43px;width:86px;transform:rotate(-23deg)}
+    .scribble{position:absolute;font:italic 17px var(--serif);color:#8e9eaf;bottom:9px;left:15%;transform:rotate(-7deg)}
+    .section-heading{text-align:center;padding-top:80px;padding-bottom:36px}
+    .tiny-label{font:10px var(--mono);text-transform:uppercase;letter-spacing:.19em;color:#8b8d99}
+    .section-heading h2{font-size:clamp(36px,5.3vw,60px);line-height:1.23;letter-spacing:-.055em;margin:17px auto 13px}
+    .section-heading h2 em{color:var(--pink-deep)}
+    .section-heading p{max-width:420px;margin:auto;color:#7b7c82;line-height:1.8;font-size:14px}
+    .notes-wrap{max-width:935px;margin:auto}
+    .progress-line{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:16px 0 17px;font:11px var(--mono);color:#858389}
+    .progress-track{height:4px;background:#e5dfd8;border-radius:20px;overflow:hidden;margin-bottom:26px}
+    .progress-fill{width:0;height:100%;background:#a2b3d7;border-radius:20px;transition:width .45s ease}
+    .note-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .note{border:1px solid #e9e4dc;background:var(--cream);border-radius:12px;box-shadow:0 5px 13px #6a555010;overflow:hidden;min-height:190px;transition:border-color .24s,box-shadow .24s,transform .24s}
+    .note:hover{transform:translateY(-3px);box-shadow:0 14px 25px #6a555017}
+    .note:last-child{grid-column:1/-1}
+    .note:nth-child(1){background:#fdf9f6}.note:nth-child(2){background:#f4f7fc}.note:nth-child(3){background:#faf4f0}.note:nth-child(4){background:#f6f6f0}.note:nth-child(5){background:#f9f5fb}
+    .note-toggle{width:100%;padding:26px 29px;text-align:left;border:0;background:none;color:inherit;cursor:pointer;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px}
+    .note-num{font:11px var(--mono);color:#a3a0a2;letter-spacing:.08em}
+    .note-title{font:500 clamp(24px,3vw,32px)/1.2 var(--serif);letter-spacing:-.04em;margin:16px 0 10px;display:block}
+    .note-prompt{color:#939099;font:11px var(--mono)}
+    .plus{width:40px;height:40px;display:grid;place-items:center;border:1px solid #ddd9d5;border-radius:50%;font-size:25px;font-weight:300;transition:transform .24s,background .24s;align-self:center}
+    .note.is-open .plus{transform:rotate(45deg);background:#ffffffb8}
+    .note-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s ease}
+    .note-detail-inner{overflow:hidden}
+    .note-text{font-size:14px;line-height:1.9;color:#676c73;margin:0 29px 26px;border-top:1px solid #dfddd8;padding-top:19px;max-width:640px}
+    .note.is-open .note-detail{grid-template-rows:1fr}
+    .aside-note{text-align:center;color:#9a999b;font:italic 16px var(--serif);margin-top:31px}
+    .letter-area{position:relative;padding:125px 0 75px;max-width:785px;margin:auto;text-align:center}
+    .letter-area:before{content:'';width:320px;height:320px;background:#e9e5f0;border-radius:50%;filter:blur(65px);opacity:.7;position:absolute;left:-130px;top:105px;z-index:-1}
+    .letter-intro{font:11px var(--mono);color:#9b8e92;letter-spacing:.15em;text-transform:uppercase;margin-bottom:19px}
+    .letter-area h2{font:500 clamp(36px,5.5vw,55px)/1.2 var(--serif);letter-spacing:-.05em;margin-bottom:13px}
+    .letter-area .lead{color:#7c7b80;font-size:14px;line-height:1.7;margin-bottom:33px}
+    .envelope-button{border:0;display:block;width:min(350px,100%);height:215px;margin:15px auto 26px;cursor:pointer;background:transparent;position:relative;filter:drop-shadow(0 19px 14px #55485d25);transition:transform .25s ease}
+    .envelope-button:hover{transform:translateY(-5px) rotate(-1deg)}
+    .envelope-back{position:absolute;inset:0;background:#c4cfe3;border-radius:6px}
+    .envelope-letter{position:absolute;left:12%;right:12%;height:150px;top:25px;background:#fffaf5;border:1px solid #e7d8cb;border-radius:3px;transform:translateY(0);transition:transform .55s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px}
+    .envelope-letter span:first-child{font:italic 19px var(--serif);color:#7d7691}
+    .envelope-letter span:last-child{font:10px var(--mono);color:#b19da2;text-transform:uppercase;letter-spacing:.12em}
+    .envelope-flap{position:absolute;inset:0;background:#a9bbdb;clip-path:polygon(0 0,100% 0,50% 56%);transform-origin:top;transition:transform .55s ease;z-index:2}
+    .envelope-front{position:absolute;inset:0;background:#d7e1ee;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:3;border-radius:0 0 6px 6px}
+    .envelope-seal{position:absolute;top:91px;left:calc(50% - 23px);z-index:4;width:46px;height:46px;border-radius:50%;background:#bd8497;display:grid;place-items:center;color:#fff3f3;font:24px var(--serif);box-shadow:0 3px 7px #79596e45;transition:opacity .3s}
+    .envelope-button.is-open .envelope-flap{transform:rotateX(180deg);z-index:0}
+    .envelope-button.is-open .envelope-letter{transform:translateY(-70px)}
+    .envelope-button.is-open .envelope-seal{opacity:0}
+    .envelope-hint{display:block;font:12px var(--mono);color:#9a919d;letter-spacing:.02em;margin-top:7px}
+    .letter-paper{display:none;text-align:left;background:#fffcf8;border:1px solid #e7ded6;border-radius:5px;padding:clamp(28px,7vw,57px);box-shadow:0 19px 54px #493a3f17;transform:rotate(-.3deg);margin-top:49px;position:relative}
+    .letter-paper.visible{display:block;animation:paper-in .65s ease both}
+    .letter-paper:before{content:'';position:absolute;width:94px;height:24px;top:-13px;left:calc(50% - 47px);transform:rotate(-3deg);background:#c6c2b78f}
+    .letter-paper .paper-date{font:11px var(--mono);color:#a6a0a6;letter-spacing:.13em;text-transform:uppercase;margin-bottom:29px}
+    .letter-paper p{color:#525a65;font-size:15px;line-height:2;margin:0 0 21px}
+    .letter-paper .salutation{font:italic 25px var(--serif);color:#6c7ea3}
+    .letter-paper strong{color:#363f4d;font-weight:600}
+    .signature{font:italic 25px var(--serif);color:#8d85a1;margin:33px 0 13px}
+    .ps-wrap{text-align:left;border-top:1px dashed #e8dbd8;padding-top:20px;margin-top:25px}
+    .ps-button{background:none;border:0;color:#8995b4;cursor:pointer;font:12px var(--mono);padding:8px 0;text-decoration:underline;text-underline-offset:4px}
+    .ps-answer{font:italic 17px var(--serif);color:#886c78;margin:8px 0 0}
+    .ps-answer[hidden]{display:none}
+    .footer{margin:10px auto 0;padding:33px 30px 46px;display:flex;justify-content:center;gap:9px;align-items:center;border-top:1px solid #e5ded8;font:11px var(--mono);color:#9a9297}
+    .footer span{color:#c9879e;font-size:18px}
+    .float-heart{position:fixed;z-index:30;pointer-events:none;user-select:none;font:22px var(--serif);color:#ba879e;animation:drift-up 1.45s ease-out forwards}
+    @keyframes bob1{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(-5deg) translateY(-8px)}}
+    @keyframes bob2{0%,100%{transform:rotate(6deg) translateY(0)}50%{transform:rotate(7deg) translateY(6px)}}
+    @keyframes paper-in{from{opacity:0;transform:translateY(25px) rotate(.5deg)}to{opacity:1;transform:translateY(0) rotate(-.3deg)}}
+    @keyframes drift-up{0%{opacity:0;transform:translate(0,15px) scale(.65)}20%{opacity:1}100%{opacity:0;transform:translate(var(--x),-120px) rotate(var(--r)) scale(1.3)}}
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr;padding-top:68px;padding-bottom:34px;gap:25px}
+      .hero-copy{max-width:530px}
+      .collage{width:min(100%,520px);margin:auto}
+      .hero h1{font-size:clamp(70px,11vw,105px)}
+    }
+    @media(max-width:600px){
+      .topbar{height:65px;padding:0 20px}.topright{font-size:9px}.brand{font-size:17px}
+      .wrapper{padding:0 22px}
+      .hero{padding-top:60px}
+      h1{font-size:clamp(65px,16vw,90px)!important;margin-top:26px;margin-bottom:21px}
+      .hero-copy{font-size:15px;line-height:1.85;margin-top:22px}
+      .hero-caption{display:block;margin:17px 0 0}
+      .collage{height:405px;margin-top:10px}
+      .photo{width:67%;padding:10px 10px 14px;top:32px;left:7%}
+      .photo-art{height:238px}.window-frame{inset:21px 24px 20px;border-width:5px}
+      .window-frame:before{border-left-width:5px}.window-frame:after{border-top-width:5px}
+      .sticky{width:183px;min-height:164px;bottom:47px;padding:23px 16px 15px;right:0}
+      .sticky-copy{font-size:19px}.sticky:before{left:57px}
+      .flower-a{width:81px;right:-10px}.flower-b{width:67px;bottom:35px}
+      .scribble{font-size:14px;bottom:7px}
+      .section-heading{padding-top:72px;padding-bottom:29px}
+      .section-heading h2{font-size:clamp(35px,9vw,46px)}
+      .note-grid{grid-template-columns:1fr;gap:12px}.note:last-child{grid-column:auto}
+      .note{min-height:0}.note-toggle{padding:24px}.note-title{font-size:27px}.note-text{margin:0 24px 25px}
+      .letter-area{padding-top:93px}.letter-paper p{font-size:14px;line-height:1.95}
+      .letter-paper{padding:31px 26px}.footer{font-size:10px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body>
+<div class="background" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="#top"><span class="star">✳</span> little things.</a>
+  <div class="topright">a note for Alicia · from Enzo</div>
+</header>
+<main>
+  <section class="hero wrapper" id="top" aria-labelledby="hero-title">
+    <div>
+      <div class="overline">nothing special happened. and that's the point.</div>
+      <h1 id="hero-title">the little <em>things.</em></h1>
+      <p class="hero-copy">Spending this week with you has made me realise how much I love <strong>the normal, everyday parts of your life.</strong> So I made you something about those. No big occasion. Just you.</p>
+      <a class="primary-link" href="#notebook">here's what I noticed <span class="arrow" aria-hidden="true">↘</span></a>
+      <span class="hero-caption">yes, I made you another website. deal with it.</span>
+    </div>
+    <div class="collage" aria-label="A little illustration of morning light and handwritten notes">
+      <div class="photo" aria-hidden="true">
+        <div class="photo-art"><div class="window-frame"><div class="sun-line"></div></div></div>
+        <p class="photo-label">my favourite kind of morning</p>
+      </div>
+      <div class="sticky" aria-hidden="true">
+        <div class="sticky-small">mental note to self</div>
+        <div class="sticky-copy">I like life a whole lot more when you're in it.</div>
+        <span class="sticky-heart">♡</span>
+      </div>
+      <svg class="flower-svg flower-a" viewBox="0 0 100 126" fill="none" aria-hidden="true"><path d="M49 62Q45 94 64 123" stroke="#758d6d" stroke-width="4" stroke-linecap="round"/><path d="M49 89Q23 63 23 84Q29 98 50 102" fill="#a4bea4"/><g fill="#98abd7" stroke="#f8f5ed" stroke-width="2"><ellipse cx="49" cy="25" rx="11" ry="22"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(45 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(90 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(135 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(180 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(225 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(270 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(315 49 47)"/></g><circle cx="49" cy="47" r="12" fill="#f9db83"/><circle cx="49" cy="47" r="5" fill="#e9af65"/></svg>
+      <svg class="flower-svg flower-b" viewBox="0 0 100 126" fill="none" aria-hidden="true"><path d="M49 62Q45 94 64 123" stroke="#829a73" stroke-width="4" stroke-linecap="round"/><path d="M49 89Q23 63 23 84Q29 98 50 102" fill="#acc5aa"/><g fill="#e8b5c2" stroke="#f8f5ed" stroke-width="2"><ellipse cx="49" cy="25" rx="11" ry="22"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(45 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(90 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(135 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(180 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(225 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(270 49 47)"/><ellipse cx="49" cy="25" rx="11" ry="22" transform="rotate(315 49 47)"/></g><circle cx="49" cy="47" r="12" fill="#f6dd99"/><circle cx="49" cy="47" r="5" fill="#dca65a"/></svg>
+      <div class="scribble" aria-hidden="true">this bit right here ↗</div>
+    </div>
+  </section>
+
+  <section class="wrapper" id="notebook" aria-labelledby="notes-title">
+    <div class="section-heading">
+      <div class="tiny-label">things i don't always say out loud · vol. 01</div>
+      <h2 id="notes-title">I've been <em>paying attention.</em></h2>
+      <p>Tap each little note. These are the bits of this week that have stayed with me.</p>
+    </div>
+    <div class="notes-wrap">
+      <div class="progress-line"><span>my notes about you</span><span id="progress-count" aria-live="polite">0 / 5 opened</span></div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="note-grid">
+        <article class="note">
+          <button type="button" class="note-toggle" aria-expanded="false" aria-controls="detail-1">
+            <span><span class="note-num">01 / first thing in the morning</span><span class="note-title">you, half asleep.</span><span class="note-prompt">tap to unfold this one ↗</span></span><span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="note-detail" id="detail-1"><div class="note-detail-inner"><p class="note-text">I know I tell you you're pretty all the time, but I swear you don't get it. Seeing you first thing in the morning, sleepy and not even trying, might actually be my favourite version of you. You're ridiculously gorgeous, Alicia.</p></div></div>
+        </article>
+        <article class="note">
+          <button type="button" class="note-toggle" aria-expanded="false" aria-controls="detail-2">
+            <span><span class="note-num">02 / the things you do for her</span><span class="note-title">you and Navy.</span><span class="note-prompt">tap to unfold this one ↗</span></span><span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="note-detail" id="detail-2"><div class="note-detail-inner"><p class="note-text">Getting to be around you two has made me appreciate how much of yourself you give to Navy. Even when you're tired or you've got a hundred other things on your mind, you still put so much into being her mum. I notice that, and I think it's pretty amazing.</p></div></div>
+        </article>
+        <article class="note">
+          <button type="button" class="note-toggle" aria-expanded="false" aria-controls="detail-3">
+            <span><span class="note-num">03 / all the invisible work</span><span class="note-title">you never stop.</span><span class="note-prompt">tap to unfold this one ↗</span></span><span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="note-detail" id="detail-3"><div class="note-detail-inner"><p class="note-text">The cleaning, organising, making sure the house is sorted, figuring out what needs doing next. I see how much effort you put into everything, even the stuff nobody really thanks you for. I hope you know it doesn't go unnoticed by me.</p></div></div>
+        </article>
+        <article class="note">
+          <button type="button" class="note-toggle" aria-expanded="false" aria-controls="detail-4">
+            <span><span class="note-num">04 / the heavier days</span><span class="note-title">how you keep going.</span><span class="note-prompt">tap to unfold this one ↗</span></span><span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="note-detail" id="detail-4"><div class="note-detail-inner"><p class="note-text">I know there's a lot you deal with, especially when family stuff gets complicated. I don't want to pretend I know exactly how all of that feels. But I can see how much you carry and how hard you try, and I'm genuinely proud of you for it.</p></div></div>
+        </article>
+        <article class="note">
+          <button type="button" class="note-toggle" aria-expanded="false" aria-controls="detail-5">
+            <span><span class="note-num">05 / the bit i liked the most</span><span class="note-title">just being there with you.</span><span class="note-prompt">tap to unfold this one ↗</span></span><span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="note-detail" id="detail-5"><div class="note-detail-inner"><p class="note-text">Honestly, my favourite part hasn't been some big plan or date. It's just getting to spend normal days with you. Waking up there, talking about random shit, watching you do your thing, being around you and Navy. I like being included in your everyday life. A lot.</p></div></div>
+        </article>
+      </div>
+      <p class="aside-note" id="note-after">just in case you thought I wasn't noticing. ♡</p>
+    </div>
+  </section>
+
+  <section class="letter-area wrapper" id="letter" aria-labelledby="letter-title">
+    <div class="letter-intro">okay, and one more thing</div>
+    <h2 id="letter-title">I wrote you something.</h2>
+    <p class="lead">Because apparently I can't just say this normally.</p>
+    <button class="envelope-button" type="button" id="envelope" aria-expanded="false" aria-controls="letter-paper" aria-label="Open your letter from Enzo">
+      <span class="envelope-back"></span>
+      <span class="envelope-letter"><span>for you, pretty girl.</span><span>from enzo ♡</span></span>
+      <span class="envelope-flap"></span>
+      <span class="envelope-front"></span>
+      <span class="envelope-seal">♡</span>
+    </button>
+    <span class="envelope-hint" id="envelope-hint">tap the envelope to open it</span>
+    <div class="letter-paper" id="letter-paper">
+      <div class="paper-date">a little letter, just because</div>
+      <p class="salutation">Hey gorgeous,</p>
+      <p>I think spending this week at yours has made me see even more of who you are, not just the bits I get over text or on a date. I've got to see the normal days, the mornings, all the things you do around the house, how you are with Navy, and some of the stuff you have to deal with too.</p>
+      <p>And the more I see, the more I appreciate you.</p>
+      <p>You're so bloody pretty, especially when you wake up and don't even realise it. But it's not just that. I see how hard you work, how much you do for everyone, and how much effort you put in even when you've got your own stuff going on. <strong>I'm genuinely so proud of you, Alicia.</strong> I hope you give yourself some credit too.</p>
+      <p>I know I can't make every stressful thing disappear, and I'm not going to act like I can. I just want you to know that I see you. The effort, the tired days, the way you keep showing up. All of it.</p>
+      <p>And I love spending time with you. Even when we're doing absolutely nothing. Just being there, getting to be part of your week, waking up next to you and seeing the real everyday you. That means more to me than I can probably explain properly.</p>
+      <p><strong>I love you, pretty girl.</strong> And I really, really like doing life with you, even the boring bits.</p>
+      <div class="signature">Love, Enzo ♡</div>
+      <div class="ps-wrap">
+        <button class="ps-button" type="button" id="ps-button" aria-expanded="false" aria-controls="ps-answer">p.s. one last thing ↗</button>
+        <p class="ps-answer" id="ps-answer" hidden>You're still a massive pain in my ass sometimes. Unfortunately for me, you're also my favourite person to be around. ♡</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">made because I wanted to, not because I had to <span>♡</span></footer>
+<script>
+(function(){
+  var notes=Array.prototype.slice.call(document.querySelectorAll('.note'));
+  var seen=new Set();
+  var progress=document.getElementById('progress-count');
+  var progressBar=document.getElementById('progress-fill');
+  notes.forEach(function(card,index){
+    var trigger=card.querySelector('.note-toggle');
+    trigger.addEventListener('click',function(){
+      var open=!card.classList.contains('is-open');
+      card.classList.toggle('is-open',open);
+      trigger.setAttribute('aria-expanded',String(open));
+      seen.add(index);
+      progress.textContent=seen.size+' / 5 opened';
+      progressBar.style.width=(seen.size/notes.length*100)+'%';
+      if(seen.size===notes.length){
+        document.getElementById('note-after').textContent='yep. I notice all of it. and I love you. ♡';
+      }
+    });
+  });
+  var envelope=document.getElementById('envelope');
+  var letter=document.getElementById('letter-paper');
+  var hint=document.getElementById('envelope-hint');
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function hearts(){
+    if(reduced)return;
+    var symbols=['♡','✦','♡','✧','♡'];
+    var rect=envelope.getBoundingClientRect();
+    for(var i=0;i<13;i++){
+      var heart=document.createElement('span');
+      heart.className='float-heart';
+      heart.textContent=symbols[i%symbols.length];
+      heart.style.left=(rect.left+rect.width*(.15+Math.random()*.7))+'px';
+      heart.style.top=(rect.top+rect.height*.4)+'px';
+      heart.style.setProperty('--x',(-100+Math.random()*200)+'px');
+      heart.style.setProperty('--r',(-40+Math.random()*80)+'deg');
+      heart.style.animationDelay=(Math.random()*.35)+'s';
+      document.body.appendChild(heart);
+      heart.addEventListener('animationend',function(){this.remove()},{once:true});
+    }
+  }
+  envelope.addEventListener('click',function(){
+    if(letter.classList.contains('visible')){
+      letter.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+      return;
+    }
+    envelope.classList.add('is-open');
+    envelope.setAttribute('aria-expanded','true');
+    envelope.setAttribute('aria-label','Your letter is open');
+    hint.textContent='written for you. every word.';
+    hearts();
+    window.setTimeout(function(){
+      letter.classList.add('visible');
+      letter.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+    },reduced?0:500);
+  });
+  var psButton=document.getElementById('ps-button');
+  var psAnswer=document.getElementById('ps-answer');
+  psButton.addEventListener('click',function(){
+    var opening=psAnswer.hidden;
+    psAnswer.hidden=!opening;
+    psButton.setAttribute('aria-expanded',String(opening));
+    psButton.textContent=opening?'told you I could be nice sometimes ♡':'p.s. one last thing ↗';
+  });
+})();
+</script>
+</body>
+</html>
