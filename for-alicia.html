@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8f5" />
+  <meta name="description" content="A soft little corner of the internet, made with love for Alicia." />
+  <title>For Alicia ♡ — Love, Enzo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+    :root { --ink:#533c48; --soft:#78616b; --rose:#ed9db3; --deep:#b55880; --pink:#ffe4eb; --blush:#fff4f3; --cream:#fffaf4; --lav:#eee7ff; --border:rgba(160,98,130,.18); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:#fff9f6; font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    button { font:inherit; cursor:pointer; }
+    button:focus-visible, a:focus-visible { outline:3px solid #9e68c9; outline-offset:4px; }
+    .ambient { position:fixed; width:38vw; height:38vw; border-radius:50%; filter:blur(70px); opacity:.35; pointer-events:none; z-index:-1; }
+    .ambient.a { background:#ffc8dc; top:-16vw; left:-14vw; }
+    .ambient.b { background:#e2d1fc; right:-20vw; top:35vh; }
+    .ambient.c { background:#f9e3ac; left:-18vw; bottom:-20vw; }
+    .shell { width:min(1100px,calc(100% - 48px)); margin:auto; }
+    .topbar { padding:28px 0; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+    .brand { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; letter-spacing:.02em; }
+    .brandheart { display:grid; place-items:center; border-radius:50%; background:#ffe3e8; width:35px; height:35px; font-size:20px; color:#bd5c85; }
+    .topbar-note { color:#a58a96; font-size:12px; letter-spacing:.06em; }
+    .hero { min-height:610px; display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:38px; padding:46px 0 66px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; padding:9px 13px; background:#fff; border:1px solid #f3d6df; border-radius:999px; color:#bc7293; font-weight:700; font-size:11px; letter-spacing:.13em; text-transform:uppercase; }
+    .eyebrow .dot { height:6px; width:6px; background:#ed91b0; border-radius:50%; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3,.quote { font-family:'DM Serif Display',Georgia,serif; font-weight:400; }
+    h1 { font-size:clamp(59px,6.1vw,87px); line-height:.99; letter-spacing:-.055em; margin:26px 0 24px; }
+    h1 em { font-weight:400; color:#bc7293; }
+    .hero-copy { max-width:495px; font-size:17px; color:#806c76; line-height:1.9; margin-bottom:30px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+    .primary { border:0; color:#fff; background:linear-gradient(135deg,#bb698d,#cf7e9b); border-radius:999px; padding:17px 25px; font-weight:700; font-size:14px; box-shadow:0 10px 30px rgba(188,101,141,.19); transition:transform .2s,box-shadow .2s; }
+    .primary:hover { transform:translateY(-2px); box-shadow:0 13px 34px rgba(188,101,141,.25); }
+    .ghost { border:1px solid #eacbd9; background:#fffafc; color:#a86582; border-radius:999px; padding:16px 22px; font-weight:700; font-size:14px; }
+    .ghost:hover { background:#ffedf3; }
+    .hero-art { position:relative; min-height:480px; display:grid; place-items:center; }
+    .art-circle { position:absolute; width:91%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 32% 28%,#fff 0%,#ffeaf1 49%,#e8dbfa 100%); box-shadow:inset 0 0 0 1px #ffffffdb; }
+    .art-dots { position:absolute; inset:5%; border:1px dashed rgba(190,124,162,.25); border-radius:50%; transform:rotate(12deg); }
+    .bouquet { position:relative; width:85%; max-width:410px; animation:float 5s ease-in-out infinite; filter:drop-shadow(0 18px 18px rgba(175,104,133,.07)); }
+    .float-word { position:absolute; z-index:1; background:#fffdfb; color:#a16b83; border:1px solid #f2dce5; box-shadow:0 12px 30px rgba(161,107,131,.08); padding:10px 14px; border-radius:14px; font-size:13px; font-weight:700; transform:rotate(-6deg); }
+    .float-word.one { left:-3%; top:17%; }
+    .float-word.two { right:-1%; bottom:20%; transform:rotate(6deg); }
+    .sparkle { position:absolute; font-size:26px; color:#ed9db3; animation:twinkle 3s ease-in-out infinite; }
+    .sparkle.s1 { right:4%; top:15%; }.sparkle.s2 { left:7%; bottom:18%; animation-delay:.9s; color:#b4a0db; }.sparkle.s3 { right:25%; top:3%; font-size:18px; animation-delay:1.6s; }
+    .captionline { text-align:center; color:#ab8997; font-size:13px; padding-top:5px; }
+    .section { padding:85px 0; }
+    .section-heading { max-width:650px; margin:0 auto 32px; text-align:center; }
+    .section-heading .overline { color:#bd7697; text-transform:uppercase; font-weight:700; letter-spacing:.19em; font-size:11px; }
+    h2 { font-size:clamp(38px,4.5vw,57px); line-height:1.08; letter-spacing:-.035em; margin:13px 0 14px; }
+    .section-heading p { font-size:15px; line-height:1.8; color:#917a86; }
+    .letter-wrap { max-width:780px; margin:0 auto; }
+    .letter { position:relative; background:repeating-linear-gradient(to bottom,#fffdfb 0px,#fffdfb 42px,#f9eaf0 43px,#fffdfb 44px); border:1px solid #f0d9e0; border-radius:11px; box-shadow:0 25px 70px rgba(140,80,112,.12), 0 2px 10px rgba(140,80,112,.04); padding:52px clamp(24px,7vw,80px) 54px; transform:rotate(-.4deg); overflow:hidden; }
+    .letter::before { content:''; position:absolute; inset:13px; pointer-events:none; border:1px solid rgba(205,153,177,.21); border-radius:4px; }
+    .stamp { position:absolute; right:24px; top:18px; display:grid; place-items:center; height:62px; width:62px; border-radius:50%; background:#f8b4c6; border:3px solid #f8c6d3; box-shadow:0 3px 0 #e7a7bb,inset 0 0 0 2px #ed9fb4; font-family:Georgia,serif; font-size:29px; color:#fff8fb; transform:rotate(8deg); }
+    .letter-intro { text-align:center; padding:39px 0 27px; transition:opacity .35s; }
+    .letter-intro h3 { font-size:38px; margin:15px 0; }
+    .letter-intro p { color:#947d89; max-width:400px; margin:0 auto 23px; font-size:15px; line-height:1.8; }
+    .letter-content { display:none; font-size:16px; line-height:2; color:#664f5b; animation:paperReveal .7s ease both; }
+    .letter.open .letter-content { display:block; }
+    .letter.open .letter-intro { display:none; }
+    .letter-content .dear { font-family:'DM Serif Display',Georgia,serif; font-size:32px; color:#ad6587; margin-bottom:22px; }
+    .letter-content p { margin-bottom:18px; }
+    .sign { font-family:'DM Serif Display',Georgia,serif; font-style:italic; font-size:28px; color:#ad6587; padding-top:7px; }
+    .heart-rule { text-align:center; color:#e0a5b7; margin:35px 0 0; letter-spacing:8px; font-size:19px; }
+    .notes-zone { background:linear-gradient(145deg,#fff0f1,#f6efff); border-top:1px solid #f5e2e8; border-bottom:1px solid #eadef1; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:36px; }
+    .care-card { background:rgba(255,255,255,.84); border:1px solid #fff; border-radius:24px; padding:28px 26px; box-shadow:0 13px 40px rgba(143,86,120,.05); transition:transform .2s; }
+    .care-card:hover { transform:translateY(-4px); }
+    .care-icon { width:55px; height:55px; display:grid; place-items:center; background:#fff0f4; border-radius:18px; font-size:28px; margin-bottom:23px; }
+    .care-card:nth-child(2) .care-icon { background:#f0ebff; }.care-card:nth-child(3) .care-icon { background:#fff3df; }
+    .care-card h3 { font-size:24px; margin:0 0 10px; }
+    .care-card p { color:#86717e; line-height:1.8; font-size:14px; margin:0; }
+    .comfort-note { text-align:center; margin:26px 0 0; color:#a18b99; font-size:12px; }
+    .magic-layout { display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:stretch; margin-top:33px; }
+    .magic-card { min-height:300px; position:relative; overflow:hidden; border:1px solid #f0dde7; border-radius:27px; background:#fff; padding:35px; display:flex; flex-direction:column; align-items:flex-start; }
+    .magic-card h3 { font-size:30px; margin:4px 0 13px; }
+    .magic-card > p { color:#977d8a; font-size:14px; line-height:1.75; }
+    .reminder { font-family:'DM Serif Display',Georgia,serif; font-style:italic; font-size:25px; line-height:1.4; margin:12px 0 26px; color:#b56789; min-height:104px; max-width:390px; }
+    .reveal-btn { margin-top:auto; border:1px solid #eccfdb; border-radius:999px; background:#fff4f8; color:#a55c7c; padding:13px 19px; font-weight:700; font-size:13px; }
+    .hug-card { background:linear-gradient(135deg,#fff7ef,#ffe9ef); align-items:center; text-align:center; }
+    .hug-card h3 { font-size:30px; }
+    .hug-card p { max-width:330px; }
+    .hug-heart { border:0; background:none; font-size:79px; line-height:1; margin:16px 0 11px; filter:drop-shadow(0 8px 8px rgba(200,90,128,.16)); transition:transform .18s; touch-action:manipulation; }
+    .hug-heart:hover { transform:scale(1.12); }.hug-heart:active { transform:scale(.88); }
+    .hug-heart.pulse { animation:heartPop .42s ease; }
+    .hug-response { min-height:20px; color:#a96b85; font-size:13px; font-weight:600; }
+    .rising-heart { position:absolute; pointer-events:none; font-size:23px; animation:rise 1.7s ease-out forwards; z-index:3; }
+    .end { text-align:center; padding:70px 20px 90px; }
+    .end .end-heart { display:block; font-size:45px; margin-bottom:21px; }
+    .end h2 { max-width:620px; margin:0 auto 18px; }
+    .end p { color:#88717e; max-width:520px; line-height:1.9; margin:0 auto; }
+    footer { border-top:1px solid #f5e2e8; text-align:center; padding:23px 14px 30px; font-size:12px; color:#a98d9a; }
+    .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+    @keyframes float { 0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)} }
+    @keyframes twinkle {0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.13)}}
+    @keyframes paperReveal {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes rise {0%{opacity:1;transform:translateY(0) scale(.7) rotate(-8deg)}100%{opacity:0;transform:translateY(-160px) scale(1.35) rotate(18deg)}}
+    @keyframes heartPop {0%{transform:scale(1)}48%{transform:scale(1.24)}100%{transform:scale(1)}}
+    @media (max-width:850px) { .hero { grid-template-columns:1fr; gap:0; text-align:center; padding-top:25px; } .hero-copy { margin-left:auto;margin-right:auto; }.actions {justify-content:center}.hero-art { min-height:400px; margin-top:10px; }.bouquet {max-width:370px}.cards{grid-template-columns:1fr 1fr}.cards .care-card:last-child {grid-column:1/-1}.magic-layout{grid-template-columns:1fr}.magic-card{min-height:275px} }
+    @media (max-width:550px) { .shell { width:min(100% - 34px, 1100px); }.topbar {padding:22px 0}.topbar-note {max-width:110px;text-align:right;font-size:10px}.hero{padding:25px 0 48px;min-height:unset}h1{font-size:clamp(55px,13vw,72px);margin:22px 0}.hero-copy{font-size:15px;line-height:1.85;margin-bottom:24px}.actions{flex-direction:column;align-items:stretch}.actions button{width:100%}.hero-art{min-height:345px}.art-circle{width:93%}.bouquet{max-width:300px}.float-word{font-size:10px;padding:8px 10px}.float-word.one{left:-1%}.float-word.two{right:-1%}.sparkle{font-size:19px}.section{padding:65px 0}.section-heading{margin-bottom:24px}h2{font-size:42px}.letter{padding:34px 23px 37px}.stamp{height:48px;width:48px;font-size:22px;right:17px;top:13px}.letter-content{font-size:14px;line-height:1.9}.letter-content .dear{font-size:28px}.letter-intro{padding:43px 0 30px}.letter-intro h3{font-size:33px}.cards{grid-template-columns:1fr;gap:12px}.cards .care-card:last-child{grid-column:auto}.care-card{padding:23px}.care-icon{margin-bottom:14px}.magic-card{padding:25px;min-height:290px}.end{padding:60px 24px 78px}.end h2{font-size:38px}.reminder{font-size:24px} }
+    @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important} }
+  </style>
+</head>
+<body>
+  <div class="ambient a" aria-hidden="true"></div><div class="ambient b" aria-hidden="true"></div><div class="ambient c" aria-hidden="true"></div>
+  <header class="shell topbar">
+    <div class="brand"><span class="brandheart">♡</span> a little love for Alicia</div>
+    <div class="topbar-note">made with all my heart, by Enzo</div>
+  </header>
+
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> just for my wifey</span>
+        <h1 id="hero-title">Hi, my <em>beautiful</em> girl.</h1>
+        <p class="hero-copy">If today feels a little too much, this is your tiny corner of the world where you don't have to explain anything, do anything, or be anything other than you. ♡</p>
+        <div class="actions">
+          <button class="primary" id="open-top" type="button">Open your little love letter &nbsp; ♡</button>
+          <button class="ghost" id="jump-hug" type="button">I need a virtual hug 🫂</button>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="An illustrated bouquet of pink, purple and blue flowers, just for Alicia" role="img">
+        <div class="art-circle" aria-hidden="true"></div><div class="art-dots" aria-hidden="true"></div>
+        <span class="sparkle s1" aria-hidden="true">✦</span><span class="sparkle s2" aria-hidden="true">✧</span><span class="sparkle s3" aria-hidden="true">✦</span>
+        <span class="float-word one" aria-hidden="true">you are so loved ♡</span><span class="float-word two" aria-hidden="true">flowers for my girl ✿</span>
+        <svg class="bouquet" viewBox="0 0 420 450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9cbd4"/><stop offset="1" stop-color="#e4b7d7"/></linearGradient>
+            <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b879ac"/><stop offset="1" stop-color="#de8a9f"/></linearGradient>
+          </defs>
+          <g fill="none" stroke="#739b79" stroke-width="7" stroke-linecap="round">
+            <path d="M208 365 Q170 265 113 138"/><path d="M211 367 Q195 257 181 105"/><path d="M214 372 Q243 246 282 112"/><path d="M212 370 Q258 259 339 185"/><path d="M207 368 Q150 260 77 227"/><path d="M208 364 Q212 245 221 64"/>
+          </g>
+          <g fill="#90b39a"><path d="M179 270Q104 219 105 266Q136 304 179 270"/><path d="M231 269Q303 208 288 266Q263 294 231 269"/><path d="M201 225Q150 181 142 211Q160 245 201 225"/><path d="M248 240Q289 198 304 217Q303 255 248 240"/></g>
+          <g transform="translate(110 143)"><g fill="#bc9bda"><ellipse cy="-42" rx="29" ry="48"/><ellipse cx="39" cy="-13" rx="43" ry="29" transform="rotate(36 39 -13)"/><ellipse cx="25" cy="34" rx="29" ry="46" transform="rotate(-23 25 34)"/><ellipse cx="-25" cy="34" rx="29" ry="46" transform="rotate(25 -25 34)"/><ellipse cx="-39" cy="-13" rx="43" ry="29" transform="rotate(-36 -39 -13)"/></g><circle r="25" fill="#f7da93"/><circle r="9" fill="#fff5c5"/></g>
+          <g transform="translate(182 106)"><g fill="#f3abc0"><ellipse cy="-40" rx="25" ry="42"/><ellipse cx="37" cy="-12" rx="40" ry="26" transform="rotate(38 37 -12)"/><ellipse cx="23" cy="30" rx="26" ry="40" transform="rotate(-20 23 30)"/><ellipse cx="-23" cy="30" rx="26" ry="40" transform="rotate(20 -23 30)"/><ellipse cx="-37" cy="-12" rx="40" ry="26" transform="rotate(-38 -37 -12)"/></g><circle r="21" fill="#f9d78a"/></g>
+          <g transform="translate(281 123)"><g fill="#93b0e4"><ellipse cy="-37" rx="27" ry="40"/><ellipse cx="36" cy="-10" rx="39" ry="27" transform="rotate(37 36 -10)"/><ellipse cx="24" cy="29" rx="27" ry="39" transform="rotate(-22 24 29)"/><ellipse cx="-24" cy="29" rx="27" ry="39" transform="rotate(22 -24 29)"/><ellipse cx="-36" cy="-10" rx="39" ry="27" transform="rotate(-37 -36 -10)"/></g><circle r="23" fill="#fff0b5"/></g>
+          <g transform="translate(340 185) scale(.77)"><g fill="#e1a3d2"><ellipse cy="-35" rx="24" ry="39"/><ellipse cx="34" cy="-10" rx="38" ry="24" transform="rotate(36 34 -10)"/><ellipse cx="20" cy="28" rx="24" ry="37"/><ellipse cx="-22" cy="28" rx="24" ry="37"/><ellipse cx="-35" cy="-10" rx="38" ry="24" transform="rotate(-36 -35 -10)"/></g><circle r="21" fill="#f5d28c"/></g>
+          <g transform="translate(82 227) scale(.65)"><g fill="#f8c8a5"><ellipse cy="-36" rx="25" ry="41"/><ellipse cx="35" cy="-11" rx="40" ry="25" transform="rotate(36 35 -11)"/><ellipse cx="20" cy="29" rx="25" ry="40"/><ellipse cx="-22" cy="29" rx="25" ry="40"/><ellipse cx="-35" cy="-11" rx="40" ry="25" transform="rotate(-36 -35 -11)"/></g><circle r="22" fill="#ffedbd"/></g>
+          <g transform="translate(223 65) scale(.7)"><g fill="#d3b4eb"><ellipse cy="-37" rx="26" ry="41"/><ellipse cx="37" cy="-10" rx="39" ry="26" transform="rotate(38 37 -10)"/><ellipse cx="22" cy="30" rx="26" ry="40"/><ellipse cx="-22" cy="30" rx="26" ry="40"/><ellipse cx="-37" cy="-10" rx="39" ry="26" transform="rotate(-38 -37 -10)"/></g><circle r="21" fill="#ffe3a6"/></g>
+          <path d="M88 245 Q212 298 340 246 L277 424 Q213 449 151 426 Z" fill="url(#paper)" stroke="#fff4ee" stroke-width="3"/>
+          <path d="M88 245 Q208 302 340 246 L214 360 Z" fill="#fbe3e7" opacity=".85"/>
+          <path d="M142 324 Q205 361 286 326" stroke="#c882a6" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <path d="M211 333 Q155 288 145 334 Q149 363 211 347 Q254 293 274 326 Q283 360 215 350" fill="url(#ribbon)" stroke="#ba6d93" stroke-width="2"/>
+          <path d="M213 341 Q198 372 184 399 L215 387 L242 403 Q229 368 213 341" fill="#ce86aa"/>
+          <path d="M205 380 Q213 370 221 380 Q227 390 213 399 Q200 389 205 380" fill="#fff8fb"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section" id="letter-section">
+      <div class="shell">
+        <div class="section-heading"><span class="overline">from me, to you</span><h2>Something from my heart.</h2><p>You can open this whenever you're ready. No rush, beautiful.</p></div>
+        <div class="letter-wrap">
+          <article class="letter" id="letter" aria-live="polite">
+            <div class="stamp" aria-hidden="true">♡</div>
+            <div class="letter-intro" id="letter-intro">
+              <span aria-hidden="true" style="font-size:34px">💌</span>
+              <h3>A letter for Alicia</h3>
+              <p>No big reason. Just a little reminder that you're loved, even on the days that feel hard.</p>
+              <button type="button" class="primary" id="unfold" aria-expanded="false" aria-controls="letter-content">Unfold my letter ♡</button>
+            </div>
+            <div class="letter-content" id="letter-content">
+              <p class="dear">My beautiful Alicia,</p>
+              <p>If today feels heavy, or the tears are coming without a reason you can put into words, that's okay. You don't have to make sense of every feeling. You don't have to pretend to be fine for me.</p>
+              <p>I love you on the happy days, the sleepy days, the uncomfortable days, and the days when you just want the world to be quiet. None of those days change how special you are to me.</p>
+              <p>I wish I could wrap you in a warm blanket, bring you your favourite treats, and give you the softest forehead kisses until the day feels a little gentler. For now, I'm sending you a hug with absolutely no questions attached.</p>
+              <p>Please take all the space and time you need, gorgeous. You don't owe me a call, a reply, or an explanation. I'm not going anywhere just because today is difficult.</p>
+              <p>Whenever you're ready, I'll be here. And even when we're not talking, you're still so, so loved.</p>
+              <p class="sign">Forever your Enzo ♡</p>
+            </div>
+          </article>
+          <div class="heart-rule" aria-hidden="true">♡ ✿ ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section notes-zone" aria-labelledby="comfort-title">
+      <div class="shell">
+        <div class="section-heading"><span class="overline">a tiny comfort corner</span><h2 id="comfort-title">For the crampy, tired moments.</h2><p>Nothing you have to do. Just a few little comforts, especially when you don't have any medicine around.</p></div>
+        <div class="cards">
+          <div class="care-card"><div class="care-icon" aria-hidden="true">🧸</div><h3>Get all cosy</h3><p>Grab a blanket, put on your comfiest clothes, and let the world be quiet for a while. Rest is enough.</p></div>
+          <div class="care-card"><div class="care-icon" aria-hidden="true">☕</div><h3>A little warmth</h3><p>A warm shower or a heat pack wrapped in a towel on your lower tummy can feel lovely when cramps are being mean.</p></div>
+          <div class="care-card"><div class="care-icon" aria-hidden="true">🍦</div><h3>Your favourite treats</h3><p>A little water, something tasty, maybe some vanilla ice cream. You deserve extra softness today.</p></div>
+        </div>
+        <p class="comfort-note">P.S. If pain is unusually severe or you're feeling unwell, please get medical help rather than just pushing through it. ♡</p>
+      </div>
+    </section>
+
+    <section class="section" id="little-surprises" aria-labelledby="surprises-title">
+      <div class="shell">
+        <div class="section-heading"><span class="overline">little things, big love</span><h2 id="surprises-title">A pocket full of love.</h2><p>For whenever you want a tiny smile. These little surprises don't need anything back.</p></div>
+        <div class="magic-layout">
+          <div class="magic-card">
+            <span class="eyebrow" style="background:#fff4f8"><span class="dot"></span> a gentle reminder</span>
+            <h3>One more thing, darling...</h3>
+            <div class="reminder" id="reminder" aria-live="polite">“You don't have to have a good day to be loved on this one.”</div>
+            <button type="button" class="reveal-btn" id="new-reminder">Another little reminder ✨</button>
+          </div>
+          <div class="magic-card hug-card" id="hugs">
+            <span class="eyebrow"><span class="dot"></span> hugs, on demand</span>
+            <h3>A hug whenever you want.</h3>
+            <p>Tap the heart as many times as you need. Imagine me holding you close.</p>
+            <button type="button" class="hug-heart" id="hug-button" aria-label="Send Alicia a virtual hug">💗</button>
+            <div class="hug-response" id="hug-response" aria-live="polite">One tap = one extra big hug ♡</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="end">
+      <span class="end-heart" aria-hidden="true">🌷</span>
+      <h2>You are my favourite person, even on the hard days.</h2>
+      <p>There's no need to text back, beautiful. I just wanted to make you something that might make tonight feel a little softer. Take care of yourself, and know how much I love you.</p>
+    </section>
+  </main>
+  <footer>made for my gorgeous Alicia, with so much love ♡ &nbsp; — Enzo</footer>
+  <script>
+    (function () {
+      'use strict';
+      const letter = document.getElementById('letter');
+      const unfold = document.getElementById('unfold');
+      const letterSection = document.getElementById('letter-section');
+      function openLetter() {
+        letter.classList.add('open');
+        unfold.setAttribute('aria-expanded', 'true');
+        letterSection.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      }
+      unfold.addEventListener('click', openLetter);
+      document.getElementById('open-top').addEventListener('click', openLetter);
+      document.getElementById('jump-hug').addEventListener('click', function () { document.getElementById('hugs').scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+      const notes = [
+        '“You don’t have to have a good day to be loved on this one.”',
+        '“You are still my favourite person, even in your quietest moments.”',
+        '“A difficult moment is not a difficult you.”',
+        '“You deserve tenderness, rest, and all the soft things.”',
+        '“Your only job right now is to be kind to yourself.”',
+        '“You make my world brighter just by being in it.”',
+        '“If all you do today is rest, I’m proud of you.”',
+        '“No explanations needed. I love you, and that’s enough.”',
+        '“I wish I could teleport you a cuddle and a vanilla ice cream.”'
+      ];
+      let noteIndex = 0;
+      const reminder = document.getElementById('reminder');
+      document.getElementById('new-reminder').addEventListener('click', function () {
+        noteIndex = (noteIndex + 1) % notes.length;
+        reminder.textContent = notes[noteIndex];
+      });
+      const hugButton = document.getElementById('hug-button');
+      const hugResponse = document.getElementById('hug-response');
+      let hugs = 0;
+      const messages = ['The biggest, warmest hug is on its way ♡', 'And a forehead kiss too 💋', 'Another one, because you deserve it 💗', 'Unlimited hugs. Always. ♡'];
+      hugButton.addEventListener('click', function () {
+        hugs += 1;
+        hugResponse.textContent = messages[(hugs - 1) % messages.length];
+        hugButton.classList.remove('pulse');
+        void hugButton.offsetWidth;
+        hugButton.classList.add('pulse');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const bounds = hugButton.getBoundingClientRect();
+        const host = document.getElementById('hugs');
+        const hostBounds = host.getBoundingClientRect();
+        for (let i = 0; i < 4; i += 1) {
+          const heart = document.createElement('span');
+          heart.className = 'rising-heart';
+          heart.setAttribute('aria-hidden', 'true');
+          heart.textContent = ['♡','💗','💕','♡'][i];
+          heart.style.left = (bounds.left - hostBounds.left + bounds.width / 2 + (i - 1.5) * 23) + 'px';
+          heart.style.top = (bounds.top - hostBounds.top + 12) + 'px';
+          heart.style.animationDelay = i * .07 + 's';
+          host.appendChild(heart);
+          heart.addEventListener('animationend', () => heart.remove(), {once:true});
+        }
+      });
+    }());
+  </script>
+</body>
+</html>
