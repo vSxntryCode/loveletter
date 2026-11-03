@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080d23">
+  <meta name="description" content="A little universe of stars, flowers, warm light, and love. Made for Alicia by Enzo.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A little universe for Alicia ✨">
+  <meta property="og:description" content="Somewhere soft to land. Made with love by Enzo.">
+  <title>Alicia's Little Universe ✦ Love, Enzo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400,50,1;9..144,500,50,1;9..144,600,50,1&display=swap" rel="stylesheet">
+  <style>
+  :root{color-scheme:dark;--bg:#080d23;--ink:#fff8f8;--muted:#bcbad7;--pink:#ffc8df;--lav:#c9b7ff;--border:rgba(238,221,255,.18);--serif:Fraunces,Georgia,serif;--sans:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  button:focus-visible,a:focus-visible,canvas:focus-visible{outline:3px solid #f8c8ff;outline-offset:4px}
+  a{color:inherit}
+  ::selection{background:#a28be4;color:#fff}
+  #backdrop{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+  .aurora{position:fixed;inset:-20%;z-index:-3;pointer-events:none;background:radial-gradient(ellipse at 70% 6%,rgba(75,61,140,.28),transparent 42%),radial-gradient(ellipse at 2% 70%,rgba(77,57,117,.21),transparent 40%),linear-gradient(160deg,#070c20,#11142f 55%,#0b1028)}
+  .grain{position:fixed;inset:0;z-index:30;opacity:.11;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+  .wrap{width:min(1160px,calc(100% - 44px));margin:0 auto}
+  .topbar{height:80px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;letter-spacing:.1em;text-transform:uppercase;font-size:10px;font-weight:700}
+  .brandmark{display:grid;place-items:center;width:43px;height:43px;border:1px solid rgba(255,239,255,.3);border-radius:50%;font:italic 19px var(--serif);letter-spacing:-3px;color:#ffe0ee;background:rgba(255,255,255,.055);box-shadow:0 0 34px rgba(226,175,255,.12)}
+  .topright{display:flex;align-items:center;gap:10px}
+  .micro{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c1b8da}
+  .sound-btn{border:1px solid var(--border);background:rgba(255,255,255,.045);color:#e5d9f9;border-radius:30px;padding:11px 15px;font-size:11px;transition:background .25s}
+  .sound-btn:hover{background:rgba(255,255,255,.12)}
+  .hero{min-height:calc(100svh - 80px);min-height:calc(100vh - 80px);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3%;padding:34px 0 95px;position:relative}
+  .hero-copy{position:relative;z-index:2}
+  .eyebrow{display:inline-flex;align-items:center;gap:11px;border:1px solid rgba(229,207,255,.2);border-radius:40px;background:rgba(221,194,255,.06);padding:11px 14px;color:#dfc6fc;letter-spacing:.13em;text-transform:uppercase;font-size:10px;font-weight:700}
+  .eyebrow .spark{color:#ffc4e4;font-size:18px;line-height:10px}
+  h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+  h1{font-size:clamp(66px,7.5vw,118px);line-height:.96;letter-spacing:-.073em;margin:27px 0 26px}
+  h1 em{font-weight:400;font-style:italic;background:linear-gradient(110deg,#ffd2e2 20%,#cfb9ff 75%);color:transparent;-webkit-background-clip:text;background-clip:text}
+  .hero-copy>p{color:#c5c3db;line-height:1.95;font-size:15px;max-width:490px}
+  .hero-copy strong{color:#ffe6f1;font-weight:600}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:33px}
+  .primary,.secondary{border-radius:50px;padding:16px 24px;min-height:52px;font-weight:700;font-size:12px;letter-spacing:.03em;transition:transform .2s,background .2s}
+  .primary:hover,.secondary:hover{transform:translateY(-2px)}
+  .primary{border:0;color:#271b3a;background:linear-gradient(120deg,#ffd2e5,#e3ccff);box-shadow:0 16px 50px rgba(229,167,253,.16)}
+  .secondary{color:#eedff7;background:rgba(255,255,255,.045);border:1px solid var(--border)}
+  .hero-aside{position:relative;display:grid;place-items:center;min-height:560px}
+  .orbit{width:min(500px,100%);aspect-ratio:1;position:relative;display:grid;place-items:center}
+  .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(220,194,255,.14);border-radius:50%;inset:4%;transform:rotate(-20deg) scaleY(.68)}
+  .orbit:after{inset:13%;transform:rotate(40deg) scaleY(.8);border-style:dashed;opacity:.7}
+  .globe-glow{position:absolute;inset:16%;border-radius:50%;background:#ad88ff;filter:blur(105px);opacity:.18;animation:pulse 7s ease-in-out infinite}
+  .moon{position:relative;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 24%,rgba(255,255,255,.85) 0,rgba(255,245,255,.18) 8%,transparent 24%),radial-gradient(circle at 29% 23%,#fdf2ff,#dccbec 35%,#bba6d5 67%,#7a739f 98%);box-shadow:inset -34px -34px 54px rgba(56,51,111,.38),inset 13px 13px 23px rgba(255,255,255,.15),0 0 95px rgba(205,173,255,.21),0 0 8px rgba(255,255,255,.5);animation:moonfloat 8s ease-in-out infinite;overflow:hidden}
+  .crater{position:absolute;border-radius:50%;box-shadow:inset 6px 7px 12px rgba(95,90,143,.12),2px 3px 15px rgba(255,255,255,.2);background:rgba(128,108,159,.1)}
+  .crater.c1{width:28%;height:22%;left:14%;top:36%}.crater.c2{width:18%;height:17%;right:24%;top:22%}.crater.c3{width:17%;height:15%;right:16%;bottom:18%}
+  .orbiter{position:absolute;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 30px rgba(225,194,255,.1);background:rgba(41,35,78,.8);border:1px solid rgba(235,215,255,.28);font-size:25px;animation:orbfloat 6s ease-in-out infinite}
+  .orbiter.one{left:8%;top:22%}.orbiter.two{right:3%;bottom:18%;animation-delay:-2s}.orbiter.three{left:13%;bottom:10%;animation-delay:-4s;font-size:18px;width:43px;height:43px}
+  .moon-label{position:absolute;bottom:0;text-align:center;color:#bdb0d0;letter-spacing:.22em;font-size:10px;text-transform:uppercase}
+  .fine-print{margin-top:40px;display:flex;gap:12px;align-items:center;color:#9d9fbd;letter-spacing:.14em;text-transform:uppercase;font-size:10px;font-weight:700}
+  .fine-print:before{content:"";height:1px;width:36px;background:#8e85a9}
+  .experience{position:relative;padding:40px 0 140px}
+  .section-head{text-align:center;max-width:740px;margin:0 auto 34px}
+  .section-head .micro{color:#d4b2f4}
+  .section-head h2{font-size:clamp(42px,5vw,68px);margin:14px 0 12px;letter-spacing:-.055em;line-height:1.08}
+  .section-head p{font-size:14px;line-height:1.9;color:#bdbbd2}
+  .dock{position:sticky;top:12px;margin:32px auto 42px;max-width:560px;display:grid;grid-template-columns:repeat(4,1fr);gap:7px;background:rgba(18,20,50,.86);border:1px solid rgba(235,215,255,.18);border-radius:23px;padding:8px;z-index:12;box-shadow:0 20px 65px rgba(0,0,0,.27);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+  .dock button{border:0;border-radius:15px;background:transparent;color:#bdb6d2;min-height:60px;display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;font-size:10px;font-weight:700;transition:background .2s,color .2s}
+  .dock button.active{background:linear-gradient(140deg,rgba(250,213,239,.16),rgba(205,190,255,.15));color:#fff1fb;box-shadow:inset 0 0 0 1px rgba(255,234,252,.12)}
+  .dock .nav-icon{font-size:23px;line-height:1}
+  .scene{display:none;animation:scenein .45s both}
+  .scene.active{display:block}
+  .scene-layout{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(290px,.72fr);gap:24px;align-items:stretch}
+  .panel{border:1px solid rgba(244,225,255,.15);border-radius:29px;overflow:hidden;background:linear-gradient(155deg,rgba(255,255,255,.095),rgba(255,255,255,.025));box-shadow:0 24px 70px rgba(0,0,0,.16)}
+  .visual-panel{min-height:480px;position:relative}
+  .copy-panel{padding:38px 34px;display:flex;flex-direction:column;justify-content:center}
+  .chapter-number{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#d7bafa}
+  .copy-panel h3{font-size:clamp(40px,4vw,54px);line-height:1.1;letter-spacing:-.055em;margin:18px 0}
+  .copy-panel>p,.hint,.supporttext{color:#c0bed6;line-height:1.88;font-size:14px}
+  .hint{font-size:11px;opacity:.85}
+  .quote-card{padding:23px;margin:23px 0;border-left:2px solid #e4badb;background:rgba(255,218,240,.055);border-radius:0 16px 16px 0;font:italic 21px/1.5 var(--serif);color:#ffe5f1;min-height:114px}
+  .mini-progress{display:flex;align-items:center;gap:13px;margin-top:15px;color:#c8bfdf;font-size:12px}
+  .progress-track{height:5px;border-radius:20px;background:#393351;flex:1;overflow:hidden}
+  .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#e0b7ff,#ffd3e2);border-radius:20px;transition:width .5s}
+  .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:19px}
+  .small-pill{border-radius:30px;border:1px solid rgba(235,214,255,.24);background:rgba(255,255,255,.055);color:#f6e7fb;padding:12px 16px;font-size:12px;font-weight:700;min-height:43px}
+  .small-pill:hover{background:rgba(234,194,255,.15)}
+  .sky-panel{background:radial-gradient(circle at 44% 32%,rgba(104,81,172,.32),transparent 48%),linear-gradient(150deg,#0e1539,#171335 70%,#110d27)}
+  .sky-panel:after{content:"TOUCH THE LIGHT";position:absolute;bottom:22px;left:0;right:0;text-align:center;pointer-events:none;font-size:10px;font-weight:700;letter-spacing:.22em;color:#b9a9d7}
+  #starMap{width:100%;height:100%;min-height:480px;display:block;cursor:crosshair;touch-action:manipulation}
+  .garden-panel{background:radial-gradient(ellipse at 42% 70%,rgba(141,81,169,.32),transparent 65%),linear-gradient(#1d1b45,#252144 75%,#201d37)}
+  #gardenSvg{width:100%;height:100%;min-height:480px;display:block}
+  .garden-panel .glow-stars{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 21% 15%,#fff 0 1px,transparent 2px),radial-gradient(circle at 75% 22%,#ffe4ea 0 2px,transparent 3px),radial-gradient(circle at 83% 42%,#fff 0 1px,transparent 2px);opacity:.7}
+  .plant-btn{display:flex;align-items:center;gap:9px}
+  .dot{height:12px;width:12px;border-radius:50%;display:inline-block;box-shadow:0 0 13px currentColor}
+  .dot.pink{background:#ffaacc;color:#ffaacc}.dot.blue{background:#a8caff;color:#a8caff}.dot.purple{background:#cbb0fa;color:#cbb0fa}
+  .flower{animation:bloom .75s cubic-bezier(.19,1,.32,1) both;transform-box:fill-box;transform-origin:center bottom}
+  .flower .petal{filter:drop-shadow(0 0 5px rgba(245,195,255,.34))}
+  .room-panel{background:linear-gradient(155deg,#1e1940,#1c1734)}
+  .room-stage{width:100%;min-height:480px;position:relative;overflow:hidden}
+  .room-svg{display:block;width:100%;height:100%;min-height:480px;aspect-ratio:900 / 630}
+  .room-hit{position:absolute;border:1px dashed rgba(254,231,255,.55);border-radius:40px;background:rgba(238,207,255,.1);width:37px;height:37px;display:grid;place-items:center;box-shadow:0 0 20px rgba(254,231,255,.14);color:white;transition:transform .15s,background .15s}
+  .room-hit:hover{transform:scale(1.1);background:rgba(255,232,255,.24)}
+  .room-hit.window-hit{left:34%;top:23%}.room-hit.lamp-hit{left:76%;top:44%}.room-hit.blanket-hit{left:38%;top:72%}.room-hit.mug-hit{left:66%;top:82%}
+  .room-panel.lamp-off .lamp-light{opacity:0}
+  .room-panel.lamp-off .lamp-shade{fill:#746b88}
+  .room-panel.rain-off .rain{display:none}
+  .room-control{display:flex;gap:9px;flex-wrap:wrap}
+  .mood-label{margin:24px 0 11px;font-size:11px;color:#bdafd9;text-transform:uppercase;letter-spacing:.16em;font-weight:700}
+  .mood-row{display:flex;flex-wrap:wrap;gap:8px}
+  .mood-row button{padding:10px 13px;border-radius:20px;font-size:11px;color:#e5d8f2;border:1px solid rgba(233,210,255,.2);background:rgba(255,255,255,.045)}
+  .mood-row button.active{background:#d8c2ef;color:#2b2345;border-color:#d8c2ef}
+  .mood-message{margin:18px 0 0;padding:18px 20px;background:rgba(251,217,239,.08);border-radius:17px;border:1px solid rgba(255,225,247,.1);font-size:13px;line-height:1.8;color:#fce5f2;min-height:90px}
+  .letter-panel{display:grid;place-items:center;min-height:490px;background:radial-gradient(circle at 48% 52%,rgba(218,143,204,.15),transparent 55%),linear-gradient(155deg,#1b1437,#181335)}
+  .envelope-area{width:min(390px,85%);aspect-ratio:1.32;position:relative;display:grid;place-items:center;perspective:1000px}
+  .envelope{position:relative;width:100%;height:75%;border:none;background:transparent;filter:drop-shadow(0 26px 32px rgba(0,0,0,.24));transition:transform .5s}
+  .envelope:hover{transform:translateY(-8px) rotate(-1deg)}
+  .env-body{position:absolute;inset:0;border-radius:6px;background:linear-gradient(145deg,#fbe5e6,#ebc7e9);box-shadow:inset 0 0 40px rgba(255,255,255,.22)}
+  .env-pocket{position:absolute;inset:0;clip-path:polygon(0 38%,50% 83%,100% 38%,100% 100%,0 100%);background:linear-gradient(160deg,#ffe3e7,#e3b6d5);z-index:2;border-radius:0 0 6px 6px}
+  .env-flap{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 61%);background:linear-gradient(#f7d6e1,#f2c4d7);z-index:3;transform-origin:50% 0;transition:transform .7s}
+  .env-seal{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(130deg,#a05d91,#bb7096);font-size:27px;color:#fff1f8;box-shadow:0 4px 15px rgba(102,51,88,.3);z-index:4}
+  .letter-panel.opened .env-flap{transform:rotateX(160deg);z-index:0}
+  .letter-panel.opened .envelope{transform:translateY(-10px)}
+  .letter-panel.opened .env-seal{opacity:0;transition:opacity .25s}
+  .seal-caption{margin:2px 0 20px;text-align:center;text-transform:uppercase;color:#bdadd2;letter-spacing:.16em;font-size:10px;pointer-events:none}
+  .overlay{position:fixed;inset:0;background:rgba(6,8,23,.78);z-index:50;display:none;align-items:center;justify-content:center;padding:22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .overlay.open{display:flex;animation:scenein .35s}
+  .letter-sheet{background:#fff9f2;color:#514252;max-width:620px;width:100%;max-height:min(82svh,800px);overflow-y:auto;border-radius:9px;padding:clamp(30px,5vw,62px);position:relative;box-shadow:0 30px 100px rgba(0,0,0,.5);background-image:linear-gradient(rgba(177,130,168,.055) 1px,transparent 1px);background-size:100% 35px}
+  .letter-sheet .micro{color:#ac7d98}
+  .letter-sheet h2{font-size:clamp(41px,6vw,63px);letter-spacing:-.05em;margin:20px 0}
+  .letter-sheet p{font-size:15px;line-height:2;margin:0 0 20px;color:#655163}
+  .letter-sheet .signature{font:italic 30px var(--serif);color:#ad6f96;margin:28px 0 0}
+  .close-overlay{position:sticky;top:0;float:right;display:grid;place-items:center;border-radius:50%;border:1px solid #e2ccde;background:#fff9f2;color:#7e5472;width:42px;height:42px;font-size:22px}
+  .ending{padding:82px 0 18px;text-align:center}
+  .ending h2{font-size:clamp(40px,5.8vw,65px);letter-spacing:-.06em;margin:20px 0}
+  .ending p{max-width:560px;margin:auto;color:#c4bbd7;line-height:1.8;font-size:14px}
+  .ending .heartline{color:#efbbd8;font:italic 26px var(--serif);margin:38px auto 15px}
+  .footer{border-top:1px solid rgba(239,215,252,.12);padding:29px 0 45px;display:flex;justify-content:space-between;gap:16px;align-items:center;font-size:11px;color:#aa9dbf}
+  .toast{position:fixed;z-index:80;left:50%;bottom:30px;transform:translate(-50%,25px);opacity:0;pointer-events:none;background:#ffe6f0;color:#33243e;padding:14px 20px;border-radius:35px;max-width:calc(100vw - 42px);text-align:center;font-weight:700;font-size:12px;box-shadow:0 18px 40px rgba(0,0,0,.3);transition:opacity .35s,transform .35s}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  .shooting-star{position:fixed;pointer-events:none;z-index:25;width:3px;height:3px;background:#fff;box-shadow:0 0 12px 3px #dfb9ff;border-radius:50%;animation:shoot .9s linear forwards}
+  .shooting-star:after{content:"";position:absolute;right:0;top:0;width:130px;height:2px;transform-origin:right;transform:rotate(-28deg);background:linear-gradient(90deg,transparent,#e6c3ff)}
+  @keyframes shoot{from{transform:translate3d(0,0,0);opacity:1}to{transform:translate3d(-220px,130px,0);opacity:0}}
+  @keyframes scenein{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pulse{50%{opacity:.28;transform:scale(1.09)}}
+  @keyframes moonfloat{50%{transform:translateY(-13px) rotate(3deg)}}
+  @keyframes orbfloat{50%{transform:translateY(-12px)}}
+  @keyframes bloom{0%{transform:scale(.05);opacity:0}70%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
+  @keyframes rain{from{transform:translateY(-180px)}to{transform:translateY(470px)}}
+  @keyframes steam{0%{transform:translateY(7px);opacity:0}50%{opacity:.6}100%{transform:translateY(-22px);opacity:0}}
+  .rain{animation:rain 1.5s linear infinite}
+  .steam{animation:steam 2.6s ease-in-out infinite}
+  @media(min-width:900px){.hero-copy{padding-bottom:25px}}
+  @media(max-width:850px){
+    .hero{grid-template-columns:1fr;min-height:auto;padding:45px 0 95px;gap:15px;text-align:center}
+    .hero-copy{order:2}.hero-aside{order:1;min-height:350px}
+    .orbit{width:min(340px,85%)}.moon-label{bottom:-14px}
+    h1{font-size:clamp(64px,11vw,90px)}.hero-copy>p{margin-left:auto;margin-right:auto}
+    .hero-actions{justify-content:center}.eyebrow{font-size:9px}.fine-print{justify-content:center}
+    .scene-layout{grid-template-columns:1fr}.copy-panel{padding:30px 25px;min-height:0}
+    .visual-panel{min-height:410px}.room-stage,.room-svg,#gardenSvg,#starMap{min-height:410px}
+    .section-head h2{font-size:48px}
+  }
+  @media(max-width:520px){
+    .wrap{width:min(100% - 32px,1160px)}.topbar{height:69px}.brand{gap:7px;font-size:9px}.brandmark{width:36px;height:36px;font-size:17px}
+    .topright .micro{display:none}.sound-btn{padding:10px 12px}
+    .hero{padding:8px 0 82px}.hero-aside{min-height:305px}.orbit{width:min(335px,96%)}.moon-label{font-size:9px;bottom:0}
+    .hero-copy h1{font-size:clamp(60px,15vw,76px);letter-spacing:-.07em;margin:19px 0 18px}.hero-copy>p{font-size:13px;line-height:1.9}
+    .primary,.secondary{padding:14px 18px;min-height:49px}.hero-actions{gap:9px}.eyebrow{letter-spacing:.07em}
+    .experience{padding-top:10px}.section-head{margin-bottom:20px}.section-head h2{font-size:41px}.section-head p{font-size:13px}
+    .dock{margin:21px auto 25px;top:7px;padding:6px;gap:2px;border-radius:20px}
+    .dock button{min-height:59px;font-size:9px;border-radius:14px}.dock .nav-icon{font-size:21px}
+    .panel{border-radius:22px}.visual-panel{min-height:340px}
+    .room-stage,.room-svg,#gardenSvg,#starMap{min-height:340px}
+    .copy-panel{padding:30px 22px}.copy-panel h3{font-size:42px}.copy-panel>p{font-size:13px}
+    .quote-card{font-size:19px;margin:18px 0}.room-hit{width:33px;height:33px}
+    .ending{padding:58px 0 16px}.ending h2{font-size:43px}.footer{flex-direction:column;text-align:center}
+    .letter-sheet{padding:25px 23px}.letter-sheet p{font-size:14px}.envelope-area{width:88%}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+  </style>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+  <canvas id="backdrop" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand"><div class="brandmark">a✧e</div><span>THE LITTLE UNIVERSE<br><span style="font-weight:400;letter-spacing:.05em;color:#9d96b9">MADE ONLY FOR ALICIA</span></span></div>
+      <div class="topright"><span class="micro">LOVE, ENZO ✦</span><button id="soundBtn" class="sound-btn" type="button" aria-pressed="false">♫ sound off</button></div>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="spark">✦</span>A SMALL WORLD WITH NO EXPECTATIONS</div>
+          <h1>A softer<br>universe,<br><em>for Alicia.</em></h1>
+          <p>For the days your feelings don't have names. For the moments your body wants to rest and your mind wants some quiet. <strong>Nothing here needs anything from you.</strong> It's just a little place I made because I love you.</p>
+          <div class="hero-actions">
+            <button class="primary" id="enterBtn" type="button">Explore your universe ✧</button>
+            <button class="secondary" id="quietBtn" type="button">Find somewhere quiet ♡</button>
+          </div>
+          <div class="fine-print">NO REPLIES NEEDED · NO NEED TO EXPLAIN</div>
+        </div>
+        <div class="hero-aside" aria-hidden="true">
+          <div class="orbit">
+            <div class="globe-glow"></div>
+            <div class="moon"><div class="crater c1"></div><div class="crater c2"></div><div class="crater c3"></div></div>
+            <div class="orbiter one">🌷</div><div class="orbiter two">♡</div><div class="orbiter three">✦</div>
+            <div class="moon-label">YOU HAVE YOUR OWN LITTLE MOON</div>
+          </div>
+        </div>
+      </section>
+      <section class="experience" id="experience" aria-label="Alicia's interactive little universe">
+        <div class="section-head">
+          <span class="micro">YOUR LITTLE UNIVERSE · FOUR PLACES</span>
+          <h2>Where would you like to land?</h2>
+          <p>Nothing to finish, nothing to get right. Wander wherever feels lovely.</p>
+        </div>
+        <nav class="dock" aria-label="Explore places in your universe">
+          <button type="button" class="active" data-scene="sky" aria-selected="true"><span class="nav-icon">✧</span>Night sky</button>
+          <button type="button" data-scene="garden" aria-selected="false"><span class="nav-icon">🌷</span>Garden</button>
+          <button type="button" data-scene="room" aria-selected="false"><span class="nav-icon">☕</span>Cosy room</button>
+          <button type="button" data-scene="letter" aria-selected="false"><span class="nav-icon">💌</span>For you</button>
+        </nav>
+        <section class="scene active" id="scene-sky" aria-label="The night sky" aria-hidden="false">
+          <div class="scene-layout">
+            <div class="panel visual-panel sky-panel">
+              <canvas id="starMap" tabindex="0" role="button" aria-label="Interactive sky. Tap or press Enter to find a glowing star and reveal a loving thought."></canvas>
+            </div>
+            <div class="panel copy-panel">
+              <div class="chapter-number">CHAPTER 01 · THE OBSERVATORY</div>
+              <h3>Seven stars.<br>Seven truths.</h3>
+              <p>I tucked seven tiny reminders into the sky. Touch a glowing star to find one. They aren't tasks or things you have to believe right now — just something to keep.</p>
+              <div class="quote-card" id="starThought" aria-live="polite">Even on a difficult day, the sky still has room for you.</div>
+              <div class="mini-progress"><span id="starsCount">0 of 7 found</span><div class="progress-track"><div class="progress-fill" id="starsFill"></div></div></div>
+              <div class="pillrow"><button id="revealStar" class="small-pill" type="button">✧ Find a star for me</button><button id="shootStar" class="small-pill" type="button">☄ Make a wish</button></div>
+              <p class="hint">Your discoveries stay on this device, even if you close the page.</p>
+            </div>
+          </div>
+        </section>
+        <section class="scene" id="scene-garden" aria-label="A garden of flowers" aria-hidden="true">
+          <div class="scene-layout">
+            <div class="panel visual-panel garden-panel">
+              <div class="glow-stars" aria-hidden="true"></div>
+              <svg id="gardenSvg" viewBox="0 0 800 480" role="img" aria-label="A moonlit garden where Alicia can grow her own pink, purple and blue flowers">
+                <defs>
+                  <linearGradient id="ghill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#3a3857"/><stop offset="1" stop-color="#151c34"/></linearGradient>
+                  <radialGradient id="gmoon"><stop stop-color="#f5e8ff" stop-opacity=".8"/><stop offset="1" stop-color="#c9abed" stop-opacity="0"/></radialGradient>
+                </defs>
+                <circle cx="645" cy="92" r="90" fill="url(#gmoon)"/>
+                <circle cx="645" cy="92" r="39" fill="#f3e0ff" opacity=".85"/>
+                <path d="M0 338 Q150 263 328 335 T800 300 V480 H0Z" fill="#363553"/>
+                <path d="M0 381 Q220 320 430 374 T800 347 V480 H0Z" fill="url(#ghill)"/>
+                <g id="grownFlowers"></g>
+                <path d="M0 435 Q240 417 480 441 T800 423 V480 H0Z" fill="#24283e" opacity=".8"/>
+                <g fill="#fff3db" opacity=".6"><circle cx="63" cy="210" r="1.8"/><circle cx="303" cy="98" r="1.7"/><circle cx="527" cy="197" r="1.5"/><circle cx="742" cy="255" r="2"/></g>
+              </svg>
+            </div>
+            <div class="panel copy-panel">
+              <div class="chapter-number">CHAPTER 02 · THE MOON GARDEN</div>
+              <h3>Let's grow<br>something soft.</h3>
+              <p>Plant a flower with one little tap. Pink, purple and blue — because this garden is yours. It will still be here when you come back.</p>
+              <div class="pillrow">
+                <button type="button" class="small-pill plant-btn" data-flower="pink"><span class="dot pink"></span>Pink</button>
+                <button type="button" class="small-pill plant-btn" data-flower="purple"><span class="dot purple"></span>Purple</button>
+                <button type="button" class="small-pill plant-btn" data-flower="blue"><span class="dot blue"></span>Blue</button>
+              </div>
+              <div class="quote-card" id="gardenThought" aria-live="polite">Flowers are allowed to take their time. So are you.</div>
+              <div class="mini-progress"><span id="gardenCount">0 flowers growing</span><div class="progress-track"><div class="progress-fill" id="gardenFill"></div></div></div>
+              <p class="hint">A garden to return to, not another thing on your to-do list.</p>
+            </div>
+          </div>
+        </section>
+        <section class="scene" id="scene-room" aria-label="The cosy room" aria-hidden="true">
+          <div class="scene-layout">
+            <div class="panel visual-panel room-panel" id="roomPanel">
+              <div class="room-stage">
+                <svg class="room-svg" viewBox="0 0 900 630" role="img" aria-label="A warmly lit illustrated room with a window, lamp, blanket and cup of tea">
+                  <defs>
+                    <linearGradient id="wall" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#383051"/><stop offset="1" stop-color="#251e3f"/></linearGradient>
+                    <linearGradient id="floor" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#2d2741"/><stop offset="1" stop-color="#13182c"/></linearGradient>
+                    <linearGradient id="night" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111630"/><stop offset="1" stop-color="#4e3b6a"/></linearGradient>
+                    <radialGradient id="warm"><stop stop-color="#ffc77b" stop-opacity=".53"/><stop offset="1" stop-color="#ffbc75" stop-opacity="0"/></radialGradient>
+                    <linearGradient id="sofa" x1="0" x2="1"><stop stop-color="#9f7b9f"/><stop offset="1" stop-color="#725d91"/></linearGradient>
+                    <clipPath id="windowClip"><rect x="117" y="84" width="287" height="257" rx="6"/></clipPath>
+                  </defs>
+                  <rect width="900" height="630" fill="url(#wall)"/>
+                  <path d="M0 460L900 443V630H0Z" fill="url(#floor)"/>
+                  <path d="M0 457L900 442" stroke="#62506f" stroke-width="9"/>
+                  <rect x="105" y="71" width="310" height="281" rx="10" fill="#a391ac" opacity=".6"/>
+                  <rect x="117" y="84" width="287" height="257" fill="url(#night)"/>
+                  <g clip-path="url(#windowClip)">
+                    <circle cx="322" cy="146" r="37" fill="#eee0fd" opacity=".9"/>
+                    <path d="M105 301Q165 240 230 290T416 268V365H105Z" fill="#3b3556"/>
+                    <path d="M100 315Q220 275 302 304T421 296V365H100Z" fill="#242d51"/>
+                    <g fill="#fdf2ff" opacity=".8"><circle cx="161" cy="140" r="2"/><circle cx="207" cy="197" r="1.7"/><circle cx="359" cy="226" r="1.5"/><circle cx="263" cy="110" r="1.3"/><circle cx="151" cy="244" r="1.5"/></g>
+                    <g id="rainGroup"></g>
+                  </g>
+                  <path d="M260 84V341M117 216H404" stroke="#a995b7" stroke-width="13"/>
+                  <rect x="103" y="70" width="314" height="283" rx="9" fill="none" stroke="#a692ac" stroke-width="15"/>
+                  <rect x="70" y="354" width="383" height="12" rx="6" fill="#aa8cb1"/>
+                  <path d="M72 74Q114 185 76 347H114Q135 194 135 74Z" fill="#9e729f"/>
+                  <path d="M410 72Q396 192 437 351H402Q389 196 374 74Z" fill="#966e9d"/>
+                  <rect x="511" y="48" width="222" height="166" rx="5" fill="#5e506d" stroke="#a08aa2" stroke-width="11"/>
+                  <path d="M526 186Q576 110 619 159T717 106" fill="none" stroke="#e5bdd2" stroke-width="8" opacity=".85"/>
+                  <circle cx="603" cy="107" r="19" fill="#e5bfd1"/>
+                  <path d="M215 344Q218 284 277 284H632Q689 287 684 350L702 499H195Z" fill="url(#sofa)"/>
+                  <rect x="205" y="355" width="486" height="157" rx="63" fill="#95749d"/>
+                  <rect x="187" y="362" width="93" height="149" rx="37" fill="#805e8d"/>
+                  <rect x="619" y="359" width="93" height="152" rx="37" fill="#805e8d"/>
+                  <rect x="230" y="452" width="437" height="52" rx="24" fill="#af8fb3"/>
+                  <rect x="253" y="485" width="27" height="61" rx="8" fill="#3b314d"/><rect x="626" y="485" width="27" height="61" rx="8" fill="#3b314d"/>
+                  <rect x="296" y="341" width="118" height="104" rx="26" fill="#d8abc2" transform="rotate(-8 355 392)"/>
+                  <rect x="481" y="344" width="118" height="104" rx="26" fill="#b6a5d5" transform="rotate(8 540 396)"/>
+                  <path d="M343 419Q410 372 507 403L610 477Q498 499 355 482Z" fill="#e6c3d0"/>
+                  <path d="M354 480Q499 496 610 477" fill="none" stroke="#f4d4df" stroke-width="9"/>
+                  <path d="M349 435Q480 426 557 456" fill="none" stroke="#f9deeb" stroke-width="4" opacity=".55"/>
+                  <ellipse cx="765" cy="544" rx="112" ry="26" fill="#0f1329" opacity=".45"/>
+                  <path d="M720 518H824V542H720Z" fill="#5a4762"/><ellipse cx="772" cy="512" rx="69" ry="12" fill="#9b7894"/>
+                  <rect x="745" y="441" width="48" height="67" rx="14" fill="#f1cedb"/>
+                  <path d="M792 452Q823 448 819 474Q815 498 792 485" fill="none" stroke="#f1cedb" stroke-width="10"/>
+                  <g class="steam" fill="none" stroke="#f8e7f0" stroke-width="5" stroke-linecap="round" opacity=".7"><path d="M757 433Q743 414 758 398"/><path d="M774 433Q788 410 769 392"/></g>
+                  <ellipse cx="769" cy="560" rx="80" ry="10" fill="#110f24" opacity=".25"/>
+                  <path d="M774 258V456" stroke="#ab93aa" stroke-width="11"/>
+                  <ellipse cx="774" cy="458" rx="39" ry="13" fill="#92809f"/>
+                  <g class="lamp-light"><ellipse cx="774" cy="308" rx="198" ry="194" fill="url(#warm)"/><path d="M702 265L608 468H889L843 265" fill="#ffc26b" opacity=".07"/></g>
+                  <path class="lamp-shade" d="M736 242H813L845 302H705Z" fill="#edc3ab" stroke="#eac5c2" stroke-width="5"/>
+                  <ellipse cx="775" cy="302" rx="70" ry="12" fill="#f8dbb8"/>
+                  <path d="M45 468Q75 427 104 457" stroke="#6f9b82" stroke-width="12" stroke-linecap="round"/><path d="M102 458Q116 391 143 397" stroke="#6f9b82" stroke-width="12" stroke-linecap="round"/>
+                  <path d="M61 486Q11 420 53 412Q93 427 61 486M104 466Q105 391 158 427Q145 456 104 466" fill="#719c85"/>
+                  <path d="M36 477H143L133 541H47Z" fill="#b18499"/>
+                </svg>
+                <button class="room-hit window-hit" type="button" data-room="window" aria-label="Tap the window">✦</button>
+                <button class="room-hit lamp-hit" type="button" data-room="lamp" aria-label="Tap the lamp">✦</button>
+                <button class="room-hit blanket-hit" type="button" data-room="blanket" aria-label="Tap the blanket">✦</button>
+                <button class="room-hit mug-hit" type="button" data-room="mug" aria-label="Tap the mug">✦</button>
+              </div>
+            </div>
+            <div class="panel copy-panel">
+              <div class="chapter-number">CHAPTER 03 · YOUR COSY ROOM</div>
+              <h3>Nothing to do.<br>Just be.</h3>
+              <p>Tap the little ✦ spots in the room. Turn the lamp on and off, watch the rain, find something warm. There's no right way to spend a quiet evening.</p>
+              <div class="room-control pillrow">
+                <button class="small-pill" id="lampToggle" type="button">☀ Lamp on</button>
+                <button class="small-pill" id="rainToggle" type="button">☂ Rain on</button>
+              </div>
+              <div class="mood-label">How does it feel right now? (optional)</div>
+              <div class="mood-row">
+                <button type="button" data-mood="heavy">A bit heavy</button>
+                <button type="button" data-mood="achy">Achy</button>
+                <button type="button" data-mood="tired">Exhausted</button>
+                <button type="button" data-mood="unsure">Don't know</button>
+              </div>
+              <div id="roomMessage" class="mood-message" aria-live="polite">You can close your eyes, put your phone down, and rest. I promise you aren't missing anything you owe me.</div>
+            </div>
+          </div>
+        </section>
+        <section class="scene" id="scene-letter" aria-label="A letter from Enzo" aria-hidden="true">
+          <div class="scene-layout">
+            <div class="panel visual-panel letter-panel" id="letterPanel">
+              <div class="envelope-area">
+                <button class="envelope" type="button" id="openEnvelope" aria-label="Open a letter from Enzo">
+                  <span class="env-body"></span><span class="env-pocket"></span><span class="env-flap"></span><span class="env-seal">♡</span>
+                </button>
+              </div>
+              <div class="seal-caption" style="position:absolute;bottom:16px;left:0;right:0">SEALED WITH LOVE · TAP TO OPEN</div>
+            </div>
+            <div class="panel copy-panel">
+              <div class="chapter-number">CHAPTER 04 · ONE LAST LITTLE THING</div>
+              <h3>Some words<br>just for you.</h3>
+              <p>There's a letter in that envelope. You don't have to open it now. It'll be here whenever you want it.</p>
+              <div class="quote-card">You never have to be cheerful, energetic, or okay to deserve my love.</div>
+              <div class="pillrow"><button class="small-pill" id="openLetterBtn" type="button">💌 Open your letter</button></div>
+              <p class="hint">And if today all you do is rest, that is more than enough.</p>
+            </div>
+          </div>
+        </section>
+        <div class="ending">
+          <span class="chapter-number">THE END, OR PERHAPS THE BEGINNING</span>
+          <h2>Come back whenever<br>you need a soft place.</h2>
+          <p>This universe isn't going anywhere. Neither is the care behind it. It asks for nothing from you — not even a reply.</p>
+          <div class="heartline">All my love, Enzo ♡</div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>HANDMADE WITH LOVE, FOR ALICIA ✦</span><span>YOUR FLOWERS & STARS STAY IN THIS BROWSER ONLY · ♡</span></footer>
+  </div>
+  <div class="overlay" id="letterOverlay" aria-hidden="true">
+    <article class="letter-sheet" role="dialog" aria-modal="true" aria-label="A love letter from Enzo">
+      <button class="close-overlay" type="button" id="closeLetter" aria-label="Close letter">×</button>
+      <div class="micro">TO MY GORGEOUS ALICIA · FROM ENZO</div>
+      <h2>My love,</h2>
+      <p>There are days when everything feels like a little too much. Sometimes you can explain why, and sometimes you just can't. I need you to know that you don't have to find the perfect words for me.</p>
+      <p>You can be quiet. You can cry. You can have a day all to yourself. You can be uncomfortable, tired, or absolutely fed up with everything. None of it makes you any less lovely, and none of it changes how I feel about you.</p>
+      <p>If I could, I'd make your favourite pasta, bring you a warm water bottle and a cosy blanket, and have vanilla ice cream ready for whenever you fancy it. I'd hold you close if you wanted that, or give you all the quiet you need if that's what feels better.</p>
+      <p>There isn't a version of you that needs to perform happiness for me. I love the laughing, silly, affectionate you. I also love the tired, overwhelmed, not-sure-what-to-say you. You're still my gorgeous girl either way.</p>
+      <p>So for now, just exist, sweetheart. Drink a little water if you can, get comfortable, and know that you are so deeply cared for. No explanation, no phone call, no message back required.</p>
+      <p>Whenever you feel like coming back to me, I'll be happy to hear from you. Until then, this little universe is yours.</p>
+      <div class="signature">Love, Enzo ♡</div>
+    </article>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+  (function(){
+    "use strict";
+    var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var id=function(x){return document.getElementById(x)};
+    var safeRead=function(key,fallback){try{var v=JSON.parse(localStorage.getItem(key));return v===null?fallback:v}catch(e){return fallback}};
+    var safeSave=function(key,v){try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}};
+    var sound=false,audio=null;
+    function tone(freq){if(!sound||reduced)return;try{var C=window.AudioContext||window.webkitAudioContext;if(!C)return;if(!audio)audio=new C();if(audio.state==="suspended")audio.resume();var o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime;o.type="sine";o.frequency.setValueAtTime(freq||660,t);o.frequency.exponentialRampToValueAtTime((freq||660)*1.18,t+.35);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.055,t+.03);g.gain.exponentialRampToValueAtTime(.0001,t+.72);o.connect(g);g.connect(audio.destination);o.start(t);o.stop(t+.74)}catch(e){}}
+    id("soundBtn").addEventListener("click",function(){sound=!sound;this.textContent=sound?"♫ sound on":"♫ sound off";this.setAttribute("aria-pressed",String(sound));if(sound)tone(587)});
+    var toastTimer;
+    function toast(msg){var t=id("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.remove("show")},3200)}
+    // An always-present sky. Frame rate is deliberately capped for mobile battery life.
+    var back=id("backdrop"),bc=back.getContext("2d"),bw=0,bh=0,stars=[],last=0;
+    function resizeBack(){if(!bc)return;var d=Math.min(window.devicePixelRatio||1,1.8);bw=innerWidth;bh=innerHeight;back.width=Math.round(bw*d);back.height=Math.round(bh*d);bc.setTransform(d,0,0,d,0,0);stars=[];var n=Math.min(165,Math.round(bw*bh/7200));for(var i=0;i<n;i++)stars.push({x:Math.random()*bw,y:Math.random()*bh,r:Math.random()*1.45+.25,a:Math.random()*.55+.2,p:Math.random()*6.28})}
+    function renderBack(ms){if(!bc)return;if(ms-last<34){requestAnimationFrame(renderBack);return}last=ms;bc.clearRect(0,0,bw,bh);for(var i=0;i<stars.length;i++){var s=stars[i],a=reduced?s.a:s.a*(.72+.28*Math.sin(ms*.0007+s.p));bc.fillStyle="rgba(238,225,255,"+a+")";bc.beginPath();bc.arc(s.x,s.y,s.r,0,Math.PI*2);bc.fill()}if(!document.hidden&&!reduced)requestAnimationFrame(renderBack)}
+    if(bc){resizeBack();if(!reduced)requestAnimationFrame(renderBack);else renderBack(1000);window.addEventListener("resize",resizeBack,{passive:true})}
+    var active="sky";
+    function scene(name,scroll){if(!id("scene-"+name))return;active=name;document.querySelectorAll(".scene").forEach(function(el){var v=el.id==="scene-"+name;el.classList.toggle("active",v);el.setAttribute("aria-hidden",String(!v))});document.querySelectorAll(".dock button").forEach(function(b){var v=b.dataset.scene===name;b.classList.toggle("active",v);b.setAttribute("aria-selected",String(v))});if(name==="sky")setTimeout(resizeMap,70);if(scroll)id("experience").scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});tone(440)}
+    document.querySelectorAll(".dock button").forEach(function(b){b.addEventListener("click",function(){scene(b.dataset.scene,false)})});
+    id("enterBtn").addEventListener("click",function(){scene("sky",true)});
+    id("quietBtn").addEventListener("click",function(){scene("room",true)});
+    // Seven small constellations that can be discovered by touch OR by a button.
+    var messages=[
+      "You are allowed to have a hard day without knowing why.",
+      "You don't need to earn rest. You already deserve it.",
+      "Even when you're quiet, you're never less loved.",
+      "Your soft heart is something beautiful, not something to apologise for.",
+      "It's okay to need space and still want to be loved.",
+      "You are so much more than whatever today feels like.",
+      "If all you do tonight is breathe and rest, that is enough."
+    ];
+    var nodes=[{x:.17,y:.26},{x:.38,y:.14},{x:.66,y:.23},{x:.82,y:.48},{x:.65,y:.75},{x:.36,y:.82},{x:.16,y:.57}];
+    var found=safeRead("alicia_universe_stars_v1",[]);if(!Array.isArray(found))found=[];found=found.filter(function(x){return Number.isInteger(x)&&x>=0&&x<7}).filter(function(x,i,a){return a.indexOf(x)===i});
+    var map=id("starMap"),mc=map.getContext("2d"),mw=0,mh=0,dots=[];
+    function resizeMap(){if(!mc)return;var rect=map.getBoundingClientRect();if(rect.width<10)return;var d=Math.min(window.devicePixelRatio||1,2);mw=rect.width;mh=rect.height;map.width=Math.round(mw*d);map.height=Math.round(mh*d);mc.setTransform(d,0,0,d,0,0);dots=[];for(var i=0;i<95;i++)dots.push({x:Math.random()*mw,y:Math.random()*mh,r:Math.random()*1.2+.2,o:Math.random()*.4+.1});drawMap()}
+    function drawMap(){if(!mc||!mw)return;mc.clearRect(0,0,mw,mh);
+      for(var j=0;j<dots.length;j++){var d=dots[j];mc.beginPath();mc.fillStyle="rgba(255,245,255,"+d.o+")";mc.arc(d.x,d.y,d.r,0,Math.PI*2);mc.fill()}
+      if(found.length>1){mc.beginPath();for(var k=0;k<found.length;k++){var p=nodes[found[k]],x=p.x*mw,y=p.y*mh;if(!k)mc.moveTo(x,y);else mc.lineTo(x,y)}mc.strokeStyle="rgba(252,205,243,.61)";mc.lineWidth=1.7;mc.setLineDash([5,7]);mc.stroke();mc.setLineDash([])}
+      nodes.forEach(function(n,i){var x=n.x*mw,y=n.y*mh,yes=found.indexOf(i)>=0;
+        var grd=mc.createRadialGradient(x,y,1,x,y,yes?44:28);grd.addColorStop(0,yes?"rgba(255,209,246,.35)":"rgba(209,183,255,.3)");grd.addColorStop(1,"rgba(255,255,255,0)");
+        mc.fillStyle=grd;mc.beginPath();mc.arc(x,y,yes?44:28,0,7);mc.fill();
+        mc.fillStyle=yes?"#ffe7f2":"#dbd1ff";mc.beginPath();mc.arc(x,y,yes?6:4,0,7);mc.fill();
+        mc.strokeStyle=yes?"rgba(255,233,255,.9)":"rgba(226,217,255,.7)";mc.lineWidth=yes?2:1.2;mc.beginPath();mc.moveTo(x-13,y);mc.lineTo(x+13,y);mc.moveTo(x,y-13);mc.lineTo(x,y+13);mc.stroke();
+      });
+    }
+    function updateStarUI(){id("starsCount").textContent=found.length+" of 7 found";id("starsFill").style.width=(found.length/7*100)+"%"}
+    function reveal(i){if(i<0||i>=7)return;if(found.indexOf(i)<0){found.push(i);safeSave("alicia_universe_stars_v1",found);tone(500+i*57)}id("starThought").textContent=messages[i];if(found.length===7)toast("Every star in your sky is glowing now ✨");updateStarUI();drawMap()}
+    id("revealStar").addEventListener("click",function(){var next=nodes.findIndex(function(_,i){return found.indexOf(i)<0});if(next<0){toast("You found every star already ♡");reveal(Math.floor(Math.random()*7));return}reveal(next)});
+    function tapMap(e){var r=map.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height,best=-1,dist=999;nodes.forEach(function(n,i){var dx=(n.x-x)*r.width,dy=(n.y-y)*r.height,v=Math.hypot(dx,dy);if(v<dist){dist=v;best=i}});if(dist<62)reveal(best);else toast("Try tapping one of the glowing stars ✧")}
+    map.addEventListener("click",tapMap);
+    map.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();id("revealStar").click()}});
+    function meteor(){if(reduced){toast("Wish made, my love ♡");return}var el=document.createElement("span");el.className="shooting-star";el.style.left=(45+Math.random()*50)+"vw";el.style.top=(12+Math.random()*35)+"vh";document.body.appendChild(el);el.addEventListener("animationend",function(){el.remove()},{once:true});setTimeout(function(){el.remove()},1500);tone(880)}
+    id("shootStar").addEventListener("click",function(){meteor();toast("A wish, sent into your little sky ♡")});
+    updateStarUI();
+    // A persistent, genuinely growing SVG garden.
+    var flowers=safeRead("alicia_universe_flowers_v1",[]);if(!Array.isArray(flowers))flowers=[];flowers=flowers.filter(function(c){return["pink","blue","purple"].indexOf(c)>=0}).slice(0,12);
+    var slots=[{x:94,y:349},{x:177,y:312},{x:265,y:345},{x:350,y:320},{x:436,y:354},{x:522,y:317},{x:604,y:343},{x:701,y:320},{x:132,y:393},{x:310,y:399},{x:505,y:394},{x:674,y:395}];
+    var palettes={pink:["#ffb5d4","#ffe0ed"],blue:["#a3c8ff","#d9eaff"],purple:["#c9acff","#e9d6ff"]};
+    var NS="http://www.w3.org/2000/svg";
+    function svg(tag,attrs){var e=document.createElementNS(NS,tag);Object.keys(attrs||{}).forEach(function(k){e.setAttribute(k,String(attrs[k]))});return e}
+    function drawFlower(color,i,animate){var pos=slots[i],x=pos.x,y=pos.y,len=54+(i%4)*11,colors=palettes[color],g=svg("g",{"class":animate?"flower":""});
+      var leaf=svg("path",{d:"M"+x+" "+(y-18)+" Q"+(x-33)+" "+(y-47)+" "+(x-32)+" "+(y-13)+" Q"+(x-9)+" "+(y-9)+" "+x+" "+(y-18)+"M"+x+" "+(y-29)+" Q"+(x+32)+" "+(y-57)+" "+(x+28)+" "+(y-26)+" Q"+(x+10)+" "+(y-12)+" "+x+" "+(y-29),fill:"#779d87",opacity:".92"});
+      g.appendChild(svg("path",{d:"M"+x+" "+(y+18)+" Q"+(x-8)+" "+(y-40)+" "+(x+3)+" "+(y-len),fill:"none",stroke:"#81a991","stroke-width":"5","stroke-linecap":"round"}));g.appendChild(leaf);
+      var cy=y-len;for(var k=0;k<6;k++){var a=k*60*Math.PI/180,px=x+Math.cos(a)*16,py=cy+Math.sin(a)*16;g.appendChild(svg("ellipse",{cx:px,cy:py,rx:12,ry:22,fill:k%2?colors[0]:colors[1],transform:"rotate("+(k*60+90)+" "+px+" "+py+")","class":"petal"}))}
+      g.appendChild(svg("circle",{cx:x,cy:cy,r:12,fill:"#ffe4a9"}));
+      g.appendChild(svg("circle",{cx:x-3,cy:cy-3,r:3,fill:"#fff6dc",opacity:".8"}));id("grownFlowers").appendChild(g);
+    }
+    function gardenUI(){id("gardenCount").textContent=flowers.length+" flower"+(flowers.length===1?"":"s")+" growing";id("gardenFill").style.width=(flowers.length/12*100)+"%"}
+    flowers.forEach(function(f,i){drawFlower(f,i,false)});gardenUI();
+    document.querySelectorAll("[data-flower]").forEach(function(b){b.addEventListener("click",function(){var c=b.dataset.flower;if(flowers.length>=12){id("gardenThought").textContent="Your garden is full of flowers. It is already enough, just as it is.";toast("Your moon garden is beautifully full 🌷");return}flowers.push(c);safeSave("alicia_universe_flowers_v1",flowers);drawFlower(c,flowers.length-1,true);gardenUI();tone(c==="pink"?659:c==="blue"?523:587);id("gardenThought").textContent="A "+c+" flower, grown just for you. Beautiful things don't need to be rushed.";if(flowers.length===12)toast("Twelve flowers. A whole little garden of love ♡")})});
+    // Room: a tiny illustrated environment with touchable details.
+    var lit=true,raining=true;
+    var rainGroup=id("rainGroup");for(var i=0;i<25;i++){var x=120+(i*39%275),ln=svg("line",{x1:x,y1:-120-i*22,x2:x-15,y2:-84-i*22,stroke:"#c2c6e5","stroke-width":"2",opacity:.2+(i%4)*.1,"class":"rain"});ln.style.animationDelay=(-i*.16)+"s";ln.style.animationDuration=(1.05+i%5*.2)+"s";rainGroup.appendChild(ln)}
+    function roomState(){var p=id("roomPanel");p.classList.toggle("lamp-off",!lit);p.classList.toggle("rain-off",!raining);id("lampToggle").textContent=lit?"☀ Lamp on":"☾ Lamp off";id("rainToggle").textContent=raining?"☂ Rain on":"☀ Clear skies"}
+    function roomNote(which){var notes={window:"Even the weather is allowed to have an off day. You can too.",lamp:"A little warm light, just in case you need some comfort.",blanket:"Imagine the softest blanket and absolutely no responsibilities for a while.",mug:"A warm drink, little sips of water, or whatever feels soothing. No rush."};id("roomMessage").textContent=notes[which];tone(480)}
+    id("lampToggle").addEventListener("click",function(){lit=!lit;roomState();roomNote("lamp")});
+    id("rainToggle").addEventListener("click",function(){raining=!raining;roomState();roomNote("window")});
+    document.querySelectorAll("[data-room]").forEach(function(b){b.addEventListener("click",function(){var v=b.dataset.room;if(v==="lamp"){lit=!lit;roomState()}if(v==="window"){raining=!raining;roomState()}roomNote(v)})});
+    var moods={heavy:"You can cry without a reason and still be completely loved. There is nothing you need to justify.",achy:"If your tummy or body is aching, a comfortably warm heat pack wrapped in a towel, a warm shower, water, and rest might help. You deserve gentleness.",tired:"You're allowed to stop for the day. No catching up, no performing happiness. Just rest.",unsure:"You don't have to give the feeling a name. You can simply feel it and let it pass in its own time."};
+    document.querySelectorAll("[data-mood]").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll("[data-mood]").forEach(function(x){x.classList.toggle("active",x===b)});id("roomMessage").textContent=moods[b.dataset.mood];tone(420)})});
+    roomState();
+    // The letter is presented as a full paper surface, with focus return and Esc support.
+    var previousFocus=null;
+    function openLetter(){previousFocus=document.activeElement;id("letterPanel").classList.add("opened");setTimeout(function(){var o=id("letterOverlay");o.classList.add("open");o.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";id("closeLetter").focus();tone(660)},reduced?0:430)}
+    function closeLetter(){var o=id("letterOverlay");o.classList.remove("open");o.setAttribute("aria-hidden","true");document.body.style.overflow="";id("letterPanel").classList.remove("opened");if(previousFocus&&previousFocus.focus)previousFocus.focus()}
+    id("openEnvelope").addEventListener("click",openLetter);id("openLetterBtn").addEventListener("click",openLetter);id("closeLetter").addEventListener("click",closeLetter);
+    id("letterOverlay").addEventListener("click",function(e){if(e.target===this)closeLetter()});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"&&id("letterOverlay").classList.contains("open"))closeLetter();if(e.key==="Tab"&&id("letterOverlay").classList.contains("open")){var f=id("letterOverlay").querySelectorAll("button:not([disabled])");if(!f.length)return;var first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+    window.addEventListener("resize",function(){if(active==="sky"&&id("scene-sky").classList.contains("active"))resizeMap()},{passive:true});
+    setTimeout(resizeMap,100);
+  })();
+  </script>
+</body>
+</html>
