@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#080d23">
-  <meta name="description" content="Hamilton Gardens, Taco Bell, four ice cubes and a ridiculous amount of affection. A tiny corner of the internet, from Enzo to Alicia.">
+  <meta name="description" content="A world made for Alicia, by Enzo. Seven stars, a garden, a place for two, and one very real love letter.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The highly unofficial Alicia universe">
-  <meta property="og:description" content="Somewhere between Hamilton Gardens and an unnecessarily specific drinks order. From Enzo.">
-  <title>The Alicia Universe — a very unofficial guide · Enzo</title>
+  <meta property="og:title" content="A little world, for us ♡">
+  <meta property="og:description" content="Something beautiful I wanted to make for you. Love, Enzo.">
+  <title>For Alicia — A Little World For Us ♡</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400,50,1;9..144,500,50,1;9..144,600,50,1&display=swap" rel="stylesheet">
@@ -151,39 +151,43 @@
   .rain{animation:rain 1.5s linear infinite}
   .steam{animation:steam 2.6s ease-in-out infinite}
 
-  /* A real inside-joke panel, like a museum inventory rather than a generic love quote. */
+
+  /* A trio of hand-illustrated imagined future scenes. */
   .dock{max-width:690px;grid-template-columns:repeat(5,1fr)}
-  .manual-panel{background:radial-gradient(ellipse at 70% 28%,rgba(233,178,205,.24),transparent 52%),linear-gradient(135deg,#21172e,#3c2845);display:grid;place-items:center;padding:35px 20px}
-  .manual-sheet{width:min(395px,95%);background:#f6ead9;color:#443545;box-shadow:8px 15px 0 rgba(18,9,25,.17),0 22px 65px rgba(0,0,0,.24);padding:36px 30px;position:relative;transform:rotate(-2deg);border:1px solid #e5d1c9}
-  .manual-sheet:before{content:"";position:absolute;left:10px;top:15px;bottom:15px;border-left:2px solid #e9b7b9}
-  .manual-stamp{font-size:8px;letter-spacing:.14em;font-weight:700;color:#8a687e;line-height:1.7}
-  .manual-title{font:600 53px/.98 var(--serif);letter-spacing:-.07em;margin:19px 0 8px}
-  .manual-title em{color:#ab638e;font-weight:400}
-  .manual-number{font-size:9px;letter-spacing:.16em;font-weight:700;color:#ad7e90}
-  .manual-paperline{height:1px;background:#d4bfc0;margin:21px 0}
-  .manual-sketch{min-height:170px;display:grid;place-items:center;align-content:center;gap:16px}
-  .manual-cup{width:143px;height:118px;border:5px solid #88748b;border-top:7px solid #88748b;border-radius:8px 8px 34px 34px;background:linear-gradient(180deg,rgba(167,186,212,.21),rgba(130,169,201,.48));position:relative;display:grid;place-items:center;font-size:26px}
-  .manual-cup:after{content:"";position:absolute;width:34px;height:57px;border:6px solid #88748b;border-radius:0 40px 40px 0;right:-41px;top:16px}
-  .manual-caption{font-size:8px;text-align:center;font-weight:700;letter-spacing:.14em;color:#806379}
-  .manual-foot{display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:8px;letter-spacing:.1em;line-height:1.5;color:#896e7b;font-weight:700}
-  .manual-foot span{font:30px var(--serif);color:#b46e92}
-  .quiz-question{font:24px/1.35 var(--serif);color:#fff0fa;margin:12px 0 18px}
-  .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .quiz-options button{border:1px solid rgba(231,205,250,.25);background:rgba(255,255,255,.06);border-radius:14px;color:#fff0f8;text-align:left;padding:13px;font-size:12px;min-height:51px;transition:background .2s,border .2s}
-  .quiz-options button:hover:not(:disabled){background:rgba(252,212,245,.18)}
-  .quiz-options button.correct{background:rgba(165,221,182,.19);border-color:#aadab7;color:#d5ffe1}
-  .quiz-options button.wrong{background:rgba(248,160,182,.12);border-color:#e8aaba}
-  .quiz-options button:disabled{cursor:default}
-  .quiz-feedback{min-height:49px;margin-top:14px;color:#e6c4d8;font-size:12px;line-height:1.8}
-  @media(max-width:520px){
-   .dock{gap:2px}
-   .dock button{font-size:8px;letter-spacing:-.025em;padding:0 1px}
-   .dock .nav-icon{font-size:19px}
-   .manual-panel{padding:20px}
-   .manual-sheet{padding:31px 25px;width:94%}
-   .manual-title{font-size:47px}
-   .manual-sketch{min-height:145px}
-  }
+  .future-panel{position:relative;min-height:520px;padding:28px;background:linear-gradient(155deg,#322342,#19152d);display:flex;align-items:center;justify-content:center}
+  .future-art{position:relative;overflow:hidden;isolation:isolate;width:min(100%,480px);height:455px;border:12px solid #f4e8e1;border-bottom-width:48px;box-shadow:0 26px 72px rgba(0,0,0,.34);background:linear-gradient(180deg,#d9a5bb 0%,#f8c6ad 55%,#c9979d 100%);transform:rotate(-2deg);transition:background .7s ease,transform .5s ease}
+  .future-art:hover{transform:rotate(0deg) translateY(-4px)}
+  .future-art[data-future="home"]{background:linear-gradient(#635277,#be8ca4 62%,#d7aba2)}
+  .future-art[data-future="years"]{background:linear-gradient(#241d44,#65517b 62%,#a07790)}
+  .future-light{position:absolute;inset:0;background:radial-gradient(ellipse at 52% 48%,rgba(255,241,203,.25),transparent 60%);pointer-events:none}
+  .future-sun{position:absolute;top:78px;left:50%;width:116px;height:116px;transform:translateX(-50%);border-radius:50%;background:#fff1d7;box-shadow:0 0 90px rgba(255,233,196,.8);transition:top .55s,background .55s,box-shadow .55s}
+  .future-art[data-future="home"] .future-sun{top:93px;background:#ffdbb1;box-shadow:0 0 85px rgba(255,210,166,.65)}
+  .future-art[data-future="years"] .future-sun{top:73px;width:87px;height:87px;background:#ece4ff;box-shadow:0 0 92px rgba(212,192,255,.6)}
+  .future-cloud{position:absolute;width:160px;height:32px;top:130px;background:rgba(255,244,240,.33);border-radius:100%;filter:blur(11px)}
+  .cloud-one{left:-20px}.cloud-two{right:-54px;top:175px;width:205px}
+  .future-art[data-future="years"] .future-cloud{opacity:.2}
+  .future-horizon{position:absolute;left:-10%;right:-10%;bottom:0;height:46%;background:linear-gradient(0deg,#593e69,#b4738d);clip-path:polygon(0 60%,12% 42%,30% 58%,45% 30%,59% 55%,78% 23%,100% 48%,100% 100%,0 100%);transition:background .6s}
+  .future-art[data-future="home"] .future-horizon{background:linear-gradient(0deg,#564363,#9b7194);clip-path:polygon(0 52%,18% 32%,35% 48%,50% 19%,66% 47%,82% 30%,100% 49%,100% 100%,0 100%)}
+  .future-art[data-future="years"] .future-horizon{background:linear-gradient(0deg,#2b294f,#544068)}
+  .future-road{position:absolute;left:36%;right:34%;bottom:-5%;height:42%;background:linear-gradient(0deg,#eeb2b2,#fbd9be);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);opacity:.85}
+  .future-art[data-future="home"] .future-road{left:29%;right:27%;bottom:0;height:35%;background:linear-gradient(0deg,#d3abc5,#f4c7d1)}
+  .future-art[data-future="years"] .future-road{background:linear-gradient(0deg,#8f769e,#b697b1)}
+  .future-figures{position:absolute;left:50%;bottom:63px;transform:translateX(-50%);font:58px/1 var(--serif);color:#ffe6eb;text-shadow:0 0 28px #fbc8de,0 8px 22px rgba(0,0,0,.15);animation:orbfloat 5s ease-in-out infinite}
+  .future-figures span{display:block}
+  .future-bottom{position:absolute;bottom:-39px;left:0;right:0;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;color:#79536a;z-index:3}
+  .future-bottom span{font-size:8px;letter-spacing:.16em;font-weight:700}
+  .future-bottom strong{font:italic 17px var(--serif);letter-spacing:-.02em}
+  .future-photo-edge{position:absolute;top:40px;right:15px;transform:rotate(8deg);font:italic 15px/1.6 var(--serif);color:#ecc6e2;text-shadow:0 3px 8px rgba(0,0,0,.2)}
+  .future-choices{display:grid;gap:8px;margin:14px 0}
+  .future-choice{width:100%;display:grid;grid-template-columns:30px 1fr 24px;align-items:center;gap:11px;text-align:left;border:1px solid rgba(237,206,255,.17);background:rgba(255,255,255,.038);color:#eee3f6;padding:15px 14px;border-radius:16px;transition:background .25s,border-color .25s;min-height:65px}
+  .future-choice.active{background:rgba(255,210,238,.13);border-color:rgba(255,227,245,.5)}
+  .future-choice:hover{background:rgba(255,210,238,.1)}
+  .future-choice-num{font-size:10px;color:#caaad5;letter-spacing:.12em}
+  .future-choice span:nth-child(2){font-weight:700;font-size:13px}
+  .future-choice small{display:block;font-weight:400;font-size:11px;color:#afa4c5;margin-top:4px}
+  .future-arrow{font-size:19px;color:#e8cde9}
+  .future-note{padding:18px 19px;min-height:111px;border:1px solid rgba(255,225,243,.12);background:rgba(255,211,237,.07);border-radius:16px;line-height:1.8;color:#fae6f3;font-size:13px}
+  @media(max-width:520px){.dock button{font-size:8.5px}.future-panel{min-height:415px;padding:22px}.future-art{height:360px;width:min(100%,310px);border-width:9px;border-bottom-width:43px}.future-bottom{bottom:-35px}.future-photo-edge{font-size:12px;top:18px;right:4px}}
   @media(min-width:900px){.hero-copy{padding-bottom:25px}}
   @media(max-width:850px){
     .hero{grid-template-columns:1fr;min-height:auto;padding:45px 0 95px;gap:15px;text-align:center}
@@ -222,41 +226,41 @@
   <div class="grain" aria-hidden="true"></div>
   <div class="wrap">
     <header class="topbar">
-      <div class="brand"><div class="brandmark">a✧e</div><span>A VERY UNOFFICIAL PROJECT<br><span style="font-weight:400;letter-spacing:.05em;color:#9d96b9">SUBJECT: ALICIA</span></span></div>
-      <div class="topright"><span class="micro">BUILT BY ENZO ✦</span><button id="soundBtn" class="sound-btn" type="button" aria-pressed="false">♫ sound off</button></div>
+      <div class="brand"><div class="brandmark">a✧e</div><span>A WORLD FOR TWO<br><span style="font-weight:400;letter-spacing:.05em;color:#9d96b9">MADE FOR ALICIA</span></span></div>
+      <div class="topright"><span class="micro">LOVE, ENZO ✦</span><button id="soundBtn" class="sound-btn" type="button" aria-pressed="false">♫ sound off</button></div>
     </header>
     <main>
       <section class="hero" id="home">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="spark">✦</span>A COMPLETELY UNNECESSARY WEBSITE. FOR ONE PERSON.</div>
-          <h1>I made you<br>your own<br><em>little world.</em></h1>
-          <p>Normal people send a cute reel. I made you a whole website. I know. <strong>Anyway, welcome to your world, gorgeous.</strong> There are memories hidden in the stars, flowers in your colours, a room full of our nonsense, and some stuff I probably should have just told you.</p>
+          <div class="eyebrow"><span class="spark">✦</span>A LITTLE SOMETHING FROM ME TO YOU</div>
+          <h1>I made<br>this world<br><em>for us.</em></h1>
+          <p>Alicia, I like making things. And somewhere along the way, I started imagining more and more things with you in them. <strong>So I made us somewhere to get lost for a little while.</strong> A sky you can touch, flowers that bloom, an evening together, and some words I wanted to say properly.</p>
           <div class="hero-actions">
-            <button class="primary" id="enterBtn" type="button">Go have a look ✧</button>
-            <button class="secondary" id="quietBtn" type="button">Visit our little room ♡</button>
+            <button class="primary" id="enterBtn" type="button">Come explore with me ✧</button>
+            <button class="secondary" id="quietBtn" type="button">An evening with you ♡</button>
           </div>
-          <div class="fine-print">BUILT FOR MY FAVOURITE GIRL · ENZO, 2026</div>
+          <div class="fine-print">JUST YOU AND ME · ENZO ♡</div>
         </div>
         <div class="hero-aside" aria-hidden="true">
           <div class="orbit">
             <div class="globe-glow"></div>
             <div class="moon"><div class="crater c1"></div><div class="crater c2"></div><div class="crater c3"></div></div>
             <div class="orbiter one">🌷</div><div class="orbiter two">♡</div><div class="orbiter three">✦</div>
-            <div class="moon-label">ONE (1) MOON. FOR YOU.</div>
+            <div class="moon-label">UNDER THE SAME MOON ♡</div>
           </div>
         </div>
       </section>
       <section class="experience" id="experience" aria-label="Alicia's interactive little universe">
         <div class="section-head">
-          <span class="micro">THE ALICIA FILES · FIVE PLACES</span>
-          <h2>Pick a little corner.</h2>
-          <p>You get a sky, a garden, a living room and the most unnecessarily thorough study of your drink preferences in existence.</p>
+          <span class="micro">FIVE LITTLE PLACES · JUST OURS</span>
+          <h2>Somewhere, just us.</h2>
+          <p>Go anywhere you like. Every place here holds a little of how I feel about you.</p>
         </div>
         <nav class="dock" aria-label="Explore places in your universe">
-          <button type="button" class="active" data-scene="sky" aria-selected="true"><span class="nav-icon">✧</span>Night sky</button>
-          <button type="button" data-scene="garden" aria-selected="false"><span class="nav-icon">🌷</span>Garden</button>
-          <button type="button" data-scene="room" aria-selected="false"><span class="nav-icon">☕</span>Cosy room</button>
-          <button type="button" data-scene="manual" aria-selected="false"><span class="nav-icon">🧊</span>The rules</button>
+          <button type="button" class="active" data-scene="sky" aria-selected="true"><span class="nav-icon">✧</span>Our sky</button>
+          <button type="button" data-scene="garden" aria-selected="false"><span class="nav-icon">🌷</span>Flowers</button>
+          <button type="button" data-scene="room" aria-selected="false"><span class="nav-icon">☕</span>Our place</button>
+          <button type="button" data-scene="future" aria-selected="false"><span class="nav-icon">♡</span>Someday</button>
           <button type="button" data-scene="letter" aria-selected="false"><span class="nav-icon">💌</span>For you</button>
         </nav>
         <section class="scene active" id="scene-sky" aria-label="The night sky" aria-hidden="false">
@@ -265,13 +269,13 @@
               <canvas id="starMap" tabindex="0" role="button" aria-label="Interactive sky. Tap or press Enter to find a glowing star and reveal a loving thought."></canvas>
             </div>
             <div class="panel copy-panel">
-              <div class="chapter-number">01 · THE LITTLE THINGS</div>
-              <h3>The things<br>I remember.</h3>
-              <p>Each star has something from us in it. I started writing them and realised how much I like our small, stupid, lovely moments. Tap the glowing stars.</p>
-              <div class="quote-card" id="starThought" aria-live="polite">Hamilton Gardens, then Taco Bell. A strange first-date combination. Somehow perfect.</div>
-              <div class="mini-progress"><span id="starsCount">0 of 7 found</span><div class="progress-track"><div class="progress-fill" id="starsFill"></div></div></div>
-              <div class="pillrow"><button id="revealStar" class="small-pill" type="button">✧ Show me another one</button><button id="shootStar" class="small-pill" type="button">☄ Shooting star</button></div>
-              <p class="hint">The stars you find are remembered on this phone. I may have taken this a bit far.</p>
+              <div class="chapter-number">01 · THE NIGHT SKY</div>
+              <h3>Things I<br>want to say.</h3>
+              <p>If we could write little messages in the stars, these are the seven I would leave for you. Tap each one and see.</p>
+              <div class="quote-card" id="starThought" aria-live="polite">Somewhere along the way, being with you started feeling like exactly where I wanted to be.</div>
+              <div class="mini-progress"><span id="starsCount">0 of 7 stars</span><div class="progress-track"><div class="progress-fill" id="starsFill"></div></div></div>
+              <div class="pillrow"><button id="revealStar" class="small-pill" type="button">✧ Light another star</button><button id="shootStar" class="small-pill" type="button">☄ Make a wish</button></div>
+              <p class="hint">Once you light a star, it stays lit here. Like a little constellation that belongs to us.</p>
             </div>
           </div>
         </section>
@@ -294,17 +298,17 @@
               </svg>
             </div>
             <div class="panel copy-panel">
-              <div class="chapter-number">02 · YOUR FLOWER ORDER</div>
-              <h3>I remembered<br>the flowers.</h3>
-              <p>Pink is your colour. And you like blue and purple flowers — especially those little Minecraft cornflowers. So I built a garden where you can plant as many as you like. Well, twelve. I set a limit because I am your boyfriend AND the developer.</p>
+              <div class="chapter-number">02 · A GARDEN FOR YOU</div>
+              <h3>A thousand<br>flowers, if I could.</h3>
+              <p>I can only fit twelve flowers in this little garden, but if I could send you a field of them, I would. Choose the colours and make something beautiful.</p>
               <div class="pillrow">
                 <button type="button" class="small-pill plant-btn" data-flower="pink"><span class="dot pink"></span>Pink</button>
                 <button type="button" class="small-pill plant-btn" data-flower="purple"><span class="dot purple"></span>Purple</button>
                 <button type="button" class="small-pill plant-btn" data-flower="blue"><span class="dot blue"></span>Blue</button>
               </div>
-              <div class="quote-card" id="gardenThought" aria-live="polite">I could have brought flowers. Instead I coded a flower garden. I know you love how completely normal I am.</div>
+              <div class="quote-card" id="gardenThought" aria-live="polite">One day I want to surprise you with flowers at the door, just because I can.</div>
               <div class="mini-progress"><span id="gardenCount">0 flowers growing</span><div class="progress-track"><div class="progress-fill" id="gardenFill"></div></div></div>
-              <p class="hint">The flowers save on your phone. Pretty sure I now owe you some real ones too.</p>
+              <p class="hint">The flowers you plant stay here, even after you close the page.</p>
             </div>
           </div>
         </section>
@@ -374,52 +378,51 @@
               </div>
             </div>
             <div class="panel copy-panel">
-              <div class="chapter-number">03 · AN EVENING WITH YOU</div>
-              <h3>The unofficial<br>date simulator.</h3>
-              <p>This is basically our ideal night in, except the sofa is drawn in code. You can change the weather, mess with the lights and choose what we're doing tonight. Tap the ✦ spots.</p>
+              <div class="chapter-number">03 · THE TWO OF US</div>
+              <h3>A night in,<br>with you.</h3>
+              <p>The kind of night I look forward to: getting to be close to you, nowhere else we need to be. We can make the plans up as we go. Play with the little lights, rain and ✦ spots.</p>
               <div class="room-control pillrow">
                 <button class="small-pill" id="lampToggle" type="button">☀ Lamp on</button>
                 <button class="small-pill" id="rainToggle" type="button">☂ Rain on</button>
               </div>
-              <div class="mood-label">CHOOSE OUR NIGHT IN · I'VE GOT PLANS</div>
+              <div class="mood-label">WHAT SHALL WE DO TOGETHER?</div>
               <div class="mood-row">
-                <button type="button" data-mood="pasta">🍝 Pasta</button>
-                <button type="button" data-mood="minecraft">🎮 Minecraft</button>
-                <button type="button" data-mood="movie">🍦 Movie & ice cream</button>
-                <button type="button" data-mood="kmart">🛍️ Kmart detour</button>
+                <button type="button" data-mood="dinner">🍝 Make dinner</button>
+                <button type="button" data-mood="dance">♡ Slow dance</button>
+                <button type="button" data-mood="movie">🎞 Movie night</button>
+                <button type="button" data-mood="talk">☾ Stay up talking</button>
               </div>
-              <div id="roomMessage" class="mood-message" aria-live="polite">Our house, one day? You pick the evening. I'll handle the rest. Except the dishes. We negotiate those.</div>
+              <div id="roomMessage" class="mood-message" aria-live="polite">I don't really care what we do. I just like getting to do it beside you.</div>
             </div>
           </div>
         </section>
 
-        <section class="scene" id="scene-manual" aria-label="Alicia's very specific rules" aria-hidden="true">
+        <section class="scene" id="scene-future" aria-label="A few little dreams for our future" aria-hidden="true">
           <div class="scene-layout">
-            <div class="panel visual-panel manual-panel">
-              <div class="manual-sheet">
-                <div class="manual-stamp">E. ZOZAYA'S EXTREMELY SERIOUS RESEARCH DEPARTMENT</div>
-                <div class="manual-title">the alicia<br><em>manual.</em></div>
-                <div class="manual-number">RECORD NO. 004 · DO NOT LOSE</div>
-                <div class="manual-paperline"></div>
-                <div class="manual-sketch" aria-hidden="true">
-                  <div class="manual-cup"><span id="cupContent">🧊 🧊 🧊 🧊</span></div>
-                  <div class="manual-caption" id="cupCaption">EXHIBIT A: THE WATER SITUATION</div>
-                </div>
-                <div class="manual-paperline"></div>
-                <div class="manual-foot">THINGS I KNOW BECAUSE I ACTUALLY LISTEN TO YOU <span>♡</span></div>
+            <div class="panel visual-panel future-panel">
+              <div class="future-art" id="futureArt" data-future="road">
+                <div class="future-light"></div>
+                <div class="future-sun"></div>
+                <div class="future-cloud cloud-one"></div>
+                <div class="future-cloud cloud-two"></div>
+                <div class="future-horizon"></div>
+                <div class="future-road"></div>
+                <div class="future-figures"><span>♡</span></div>
+                <div class="future-bottom"><span>POSTCARD FROM SOMEDAY</span><strong id="futureArtTitle">somewhere new.</strong></div>
               </div>
+              <div class="future-photo-edge" aria-hidden="true">to: alicia<br>love, enzo ♡</div>
             </div>
             <div class="panel copy-panel">
-              <div class="chapter-number">04 · THE OFFICIAL ALICIA SPECIFICATIONS</div>
-              <h3>I swear<br>I do listen.</h3>
-              <p>You have strangely precise rules for certain things. Which is one of my favourite details about you. Let's see if I've got them right.</p>
-              <div class="manual-quiz" aria-live="polite">
-                <div id="quizLabel" class="mood-label">QUESTION 1 OF 3</div>
-                <div id="quizQuestion" class="quiz-question">How many ice cubes go in your water?</div>
-                <div id="quizOptions" class="quiz-options"></div>
-                <div id="quizFeedback" class="quiz-feedback">This is a very serious examination.</div>
-                <button id="quizNext" class="small-pill" style="display:none;margin-top:13px" type="button">Next important question →</button>
+              <div class="chapter-number">04 · THE DAYS WE HAVEN'T HAD YET</div>
+              <h3>Things I want<br>with you.</h3>
+              <p>We have a whole lot of days ahead to fill. I like imagining the little ones as much as the big ones.</p>
+              <div class="future-choices" role="group" aria-label="Choose a day to imagine together">
+                <button type="button" class="future-choice active" data-future="road" aria-pressed="true"><span class="future-choice-num">01</span><span>Somewhere new<small>A drive with no real plan</small></span><span class="future-arrow">↗</span></button>
+                <button type="button" class="future-choice" data-future="home" aria-pressed="false"><span class="future-choice-num">02</span><span>Our own place<small>The little ordinary days</small></span><span class="future-arrow">↗</span></button>
+                <button type="button" class="future-choice" data-future="years" aria-pressed="false"><span class="future-choice-num">03</span><span>Years from now<small>The part I look forward to</small></span><span class="future-arrow">↗</span></button>
               </div>
+              <div class="future-note" id="futureNote" aria-live="polite">I want to drive somewhere with you just because we can. Stop when we see something interesting, get something to eat, and come home with a story no one else would understand.</div>
+              <div class="pillrow"><button id="futureWish" class="small-pill" type="button">✦ Send a little wish into the sky</button></div>
             </div>
           </div>
         </section>
@@ -434,39 +437,38 @@
               <div class="seal-caption" style="position:absolute;bottom:16px;left:0;right:0">SEALED WITH LOVE · TAP TO OPEN</div>
             </div>
             <div class="panel copy-panel">
-              <div class="chapter-number">05 · THE LETTER I COULDN'T JUST TEXT</div>
-              <h3>Okay, this<br>bit is soppy.</h3>
-              <p>I saved the proper mushy stuff for an actual letter. Yes, with a wax seal. I'm committed to the bit.</p>
-              <div class="quote-card">I can hear your voice for five minutes and it makes an ordinary day better. There. I said it.</div>
+              <div class="chapter-number">05 · A LETTER FOR ALICIA</div>
+              <h3>Things I can<br>say better here.</h3>
+              <p>Some things I would rather tell you face to face. Until then, there's a letter inside.</p>
+              <div class="quote-card">If I had the whole night with you, I still wouldn't want it to end.</div>
               <div class="pillrow"><button class="small-pill" id="openLetterBtn" type="button">💌 Open your letter</button></div>
-              <p class="hint">There is one thing in the letter I'll probably never stop teasing you about.</p>
+              <p class="hint">It is a real letter. From me. For you.</p>
             </div>
           </div>
         </section>
         <div class="ending">
-          <span class="chapter-number">OFFICIAL END OF THE INTERNET PRESENTATION</span>
-          <h2>Anyway. It's yours.<br>Keep it.</h2>
-          <p>There are a thousand boring websites on the internet. I wanted you to have one that knows about Hamilton Gardens, your ice cube rules, your Minecraft flowers, and all the things I like about you.</p>
+          <span class="chapter-number">ONE LAST THING</span>
+          <h2>I love you.<br>That's all.</h2>
+          <p>More than the stars or flowers or anything on this page, I just want more days with you. The exciting ones, the quiet ones, and everything in between.</p>
           <div class="heartline">Love you, gorgeous. — Enzo ♡</div>
         </div>
       </section>
     </main>
-    <footer class="footer"><span>HAND-CODED, FOR ALICIA. YES, REALLY. ✦</span><span>YOUR FLOWERS & STARS STAY ON THIS DEVICE · ♡</span></footer>
+    <footer class="footer"><span>MADE FOR ALICIA, WITH LOVE FROM ENZO. ✦</span><span>OUR LITTLE CORNER OF THE UNIVERSE · ♡</span></footer>
   </div>
   <div class="overlay" id="letterOverlay" aria-hidden="true">
     <article class="letter-sheet" role="dialog" aria-modal="true" aria-label="A love letter from Enzo">
       <button class="close-overlay" type="button" id="closeLetter" aria-label="Close letter">×</button>
       <div class="micro">A NOTE FROM ME · FOR YOU ONLY</div>
       <h2>Alicia,</h2>
-      <p>Right. I'm going to be embarrassingly soft for a minute. You can laugh at me afterwards.</p>
-      <p>I still remember our first date at Hamilton Gardens. The flowers, getting to be around you properly, then us somehow ending up at Taco Bell. I'd go back to that day in a heartbeat. Not because it was some fancy, perfect date — because it was <em>you</em>.</p>
-      <p>You have so many little habits that I don't think you realise I notice. The tongue-out face on calls. How shy you get when I compliment you. The tiny hugs. The way you pull me back in for more cuddles. The play-fighting, despite the rather obvious size difference between us. Even your little snores. Yes, I said it.</p>
-      <p>I love hearing you talk, even when the conversation has absolutely no point. I love that we can play Minecraft or Among Us and call it a date. I love getting to cook for you. I love you when you're all dressed up, when you're being silly, when you're wearing your glasses and making faces at me. Pretty much all the versions.</p>
-      <p>I've memorised an unreasonable amount of Alicia facts. Exactly four ice cubes in water. None in fast-food fizzy drinks. Four <em>tiny</em> marshmallows in hot chocolate. Pink. Purple and blue flowers. Pasta. Vanilla ice cream. And that's not because I sat down to revise. I just like knowing things about you.</p>
-      <p>And something else I want you to know: I admire how much you care about the people you love. I see it in the little things. It makes me proud to be the person who gets to call you my girl.</p>
-      <p>I'm excited for all the memories we haven't made yet. More dates, more random drives, more cooking, more silly FaceTimes, and hopefully a lot more of you stealing my space and demanding a cuddle. I wouldn't have it any other way.</p>
-      <p>I love you, gorgeous. And I hope when you look at this ridiculously over-engineered website, you can tell exactly how much.</p>
-            <div class="signature">Love, Enzo ♡</div>
+      <p>I could have sent you a message, but I wanted to make you something you could actually explore. Something a little bit ridiculous, a little bit beautiful, and completely yours.</p>
+      <p>I love being with you. I love the excitement before I get to see you, and the way the time goes too fast when we're together. I love our hugs, the way we laugh over absolutely nothing, and how happy I am just having you beside me.</p>
+      <p>Sometimes I'll be doing something completely ordinary and I'll catch myself imagining you there. Cooking in the same kitchen. Going for a drive without much of a plan. Falling asleep next to you after a long day. Coming home and seeing you. Those are the kinds of things I find myself wanting.</p>
+      <p>There are so many places I want to take you and so many things I want us to do. But the part I'm most excited about isn't any particular trip or date. It's getting to share it with you.</p>
+      <p>I want to keep learning how to love you well. I want to be the one who makes plans and actually follows through with them. I want us to keep finding silly things to laugh at and reasons to stay a little longer together.</p>
+      <p>I don't know exactly what every year ahead of us looks like. I just know I really want you in it. I want more mornings, more evenings, more stories to tell, and more moments where I get to look over at you and think, <em>there you are.</em></p>
+      <p>And if you ever wonder what all this is supposed to mean, it's very simple. I love you, Alicia. More than a webpage can say.</p>
+      <div class="signature">Love, Enzo ♡</div>
     </article>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -494,13 +496,13 @@
     id("quietBtn").addEventListener("click",function(){scene("room",true)});
     // Seven small constellations that can be discovered by touch OR by a button.
     var messages=[
-      "Hamilton Gardens. You, me, the flowers, and me pretending I was remotely smooth. Still one of my favourite days.",
-      "Our first date included Taco Bell. If that isn't romance then I don't know what is.",
-      "That tongue-out face you make on FaceTime. You think you're being funny. You are. Unfortunately.",
-      "Minecraft date night. I don't care what anybody says, that absolutely counts as a proper date.",
-      "Among Us with you. Love you to pieces, still voting you out if you act suspicious.",
-      "The way you go all shy when I compliment you is ridiculous, because have you SEEN yourself?",
-      "Your tiny hugs, play-fighting, trying to pull me back for another cuddle. I hope you know those are my favourite bits."
+      "I still get excited knowing I get to see you. I hope that never stops.",
+      "If I could keep one feeling, it would be that moment when I pull you in for a hug and don't want to let go.",
+      "I don't need a perfect day with you. I'd be happy just cooking something together and laughing in the kitchen.",
+      "I find myself thinking about the next time I'll see you before we've even said goodbye.",
+      "There is something about being close to you that makes even the most ordinary day feel like one I'll remember.",
+      "I want the little things with you: sleepy mornings, long drives, our own routines, and coming home to each other.",
+      "I love you, Alicia. Not because it sounds pretty written in the stars. I genuinely mean it."
     ];
     var nodes=[{x:.17,y:.26},{x:.38,y:.14},{x:.66,y:.23},{x:.82,y:.48},{x:.65,y:.75},{x:.36,y:.82},{x:.16,y:.57}];
     var found=safeRead("alicia_universe_stars_v1",[]);if(!Array.isArray(found))found=[];found=found.filter(function(x){return Number.isInteger(x)&&x>=0&&x<7}).filter(function(x,i,a){return a.indexOf(x)===i});
@@ -517,13 +519,13 @@
       });
     }
     function updateStarUI(){id("starsCount").textContent=found.length+" of 7 found";id("starsFill").style.width=(found.length/7*100)+"%"}
-    function reveal(i){if(i<0||i>=7)return;if(found.indexOf(i)<0){found.push(i);safeSave("alicia_universe_stars_v1",found);tone(500+i*57)}id("starThought").textContent=messages[i];if(found.length===7)toast("That's all seven. I really do remember the little things.");updateStarUI();drawMap()}
+    function reveal(i){if(i<0||i>=7)return;if(found.indexOf(i)<0){found.push(i);safeSave("alicia_universe_stars_v1",found);tone(500+i*57)}id("starThought").textContent=messages[i];if(found.length===7)toast("Seven stars lit. All for you, Alicia ♡");updateStarUI();drawMap()}
     id("revealStar").addEventListener("click",function(){var next=nodes.findIndex(function(_,i){return found.indexOf(i)<0});if(next<0){toast("You found every star already ♡");reveal(Math.floor(Math.random()*7));return}reveal(next)});
     function tapMap(e){var r=map.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height,best=-1,dist=999;nodes.forEach(function(n,i){var dx=(n.x-x)*r.width,dy=(n.y-y)*r.height,v=Math.hypot(dx,dy);if(v<dist){dist=v;best=i}});if(dist<62)reveal(best);else toast("Try tapping one of the glowing stars ✧")}
     map.addEventListener("click",tapMap);
     map.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();id("revealStar").click()}});
-    function meteor(){if(reduced){toast("Wish submitted. No refunds. ♡");return}var el=document.createElement("span");el.className="shooting-star";el.style.left=(45+Math.random()*50)+"vw";el.style.top=(12+Math.random()*35)+"vh";document.body.appendChild(el);el.addEventListener("animationend",function(){el.remove()},{once:true});setTimeout(function(){el.remove()},1500);tone(880)}
-    id("shootStar").addEventListener("click",function(){meteor();toast("Wish made. I won't ask what it was.")});
+    function meteor(){if(reduced){toast("Wish made. I hope we get to make it real ♡");return}var el=document.createElement("span");el.className="shooting-star";el.style.left=(45+Math.random()*50)+"vw";el.style.top=(12+Math.random()*35)+"vh";document.body.appendChild(el);el.addEventListener("animationend",function(){el.remove()},{once:true});setTimeout(function(){el.remove()},1500);tone(880)}
+    id("shootStar").addEventListener("click",function(){meteor();toast("I made a wish too. I think you can guess what it was ♡")});
     updateStarUI();
     // A persistent, genuinely growing SVG garden.
     var flowers=safeRead("alicia_universe_flowers_v1",[]);if(!Array.isArray(flowers))flowers=[];flowers=flowers.filter(function(c){return["pink","blue","purple"].indexOf(c)>=0}).slice(0,12);
@@ -540,54 +542,43 @@
     }
     function gardenUI(){id("gardenCount").textContent=flowers.length+" flower"+(flowers.length===1?"":"s")+" growing";id("gardenFill").style.width=(flowers.length/12*100)+"%"}
     flowers.forEach(function(f,i){drawFlower(f,i,false)});gardenUI();
-    document.querySelectorAll("[data-flower]").forEach(function(b){b.addEventListener("click",function(){var c=b.dataset.flower;if(flowers.length>=12){id("gardenThought").textContent="You planted all twelve. Honestly, you have a more successful garden than I would in real life.";toast("Full garden. Qualified virtual florist. 🌷");return}flowers.push(c);safeSave("alicia_universe_flowers_v1",flowers);drawFlower(c,flowers.length-1,true);gardenUI();tone(c==="pink"?659:c==="blue"?523:587);id("gardenThought").textContent=c==="blue"?"Blue. One of the colours you said you liked. Yes, I was listening.":c==="purple"?"Purple, because of course your garden needs purple.":"A pink one as well. I remember that pink is your colour.";if(flowers.length===12)toast("Twelve flowers. I hope I got the colours right ♡")})});
+    document.querySelectorAll("[data-flower]").forEach(function(b){b.addEventListener("click",function(){var c=b.dataset.flower;if(flowers.length>=12){id("gardenThought").textContent="There are twelve flowers here now. I wish I could bring you twelve real ones.";toast("Your whole garden is in bloom ♡");return}flowers.push(c);safeSave("alicia_universe_flowers_v1",flowers);drawFlower(c,flowers.length-1,true);gardenUI();tone(c==="pink"?659:c==="blue"?523:587);id("gardenThought").textContent="Another flower for you. I would happily keep planting them all night.";if(flowers.length===12)toast("Twelve flowers, all yours ♡")})});
     // Room: a tiny illustrated environment with touchable details.
     var lit=true,raining=true;
     var rainGroup=id("rainGroup");for(var i=0;i<25;i++){var x=120+(i*39%275),ln=svg("line",{x1:x,y1:-120-i*22,x2:x-15,y2:-84-i*22,stroke:"#c2c6e5","stroke-width":"2",opacity:.2+(i%4)*.1,"class":"rain"});ln.style.animationDelay=(-i*.16)+"s";ln.style.animationDuration=(1.05+i%5*.2)+"s";rainGroup.appendChild(ln)}
     function roomState(){var p=id("roomPanel");p.classList.toggle("lamp-off",!lit);p.classList.toggle("rain-off",!raining);id("lampToggle").textContent=lit?"☀ Lamp on":"☾ Lamp off";id("rainToggle").textContent=raining?"☂ Rain on":"☀ Clear skies"}
-    function roomNote(which){var notes={window:"Can we agree a rainy evening is a good excuse for a movie and staying inside together?",lamp:"Mood lighting. Romantic interior design. I am clearly a man of many talents.",blanket:"I know full well that if we were actually here, you would be using me as the blanket.",mug:"Hot chocolate: exactly four tiny marshmallows. I remembered. Obviously."};id("roomMessage").textContent=notes[which];tone(480)}
+    function roomNote(which){var notes={window:"Rain against the window, your hand in mine, and nowhere we have to be.",lamp:"Let me put the lamp on. I want to see your face.",blanket:"Come closer. You know I'd pull the blanket over both of us.",mug:"I'll make us something warm. Then I'm taking my place next to you on the sofa."};id("roomMessage").textContent=notes[which];tone(480)}
     id("lampToggle").addEventListener("click",function(){lit=!lit;roomState();roomNote("lamp")});
     id("rainToggle").addEventListener("click",function(){raining=!raining;roomState();roomNote("window")});
     document.querySelectorAll("[data-room]").forEach(function(b){b.addEventListener("click",function(){var v=b.dataset.room;if(v==="lamp"){lit=!lit;roomState()}if(v==="window"){raining=!raining;roomState()}roomNote(v)})});
-    var moods={pasta:"I'm cooking pasta. You get the good seat, taste-test the sauce, and criticise my garlic usage like a professional. Then I'm claiming my cuddle.",minecraft:"Minecraft date. We build a house together, you choose the flowers, and I pretend I'm not going to get distracted trying to build something ridiculously huge.",movie:"You choose the film. I'll get vanilla ice cream. We sit down, promise to actually watch it, and then spend half the time talking over it.",kmart:"We were supposed to have a quiet evening. Somehow we're at Kmart. I carry the bags, you find twelve things we absolutely didn't go in for. Perfect."};
+    var moods={dinner:"I'll cook with you. We'll probably make a mess, eat a little too late, and end up sitting together in the kitchen longer than we planned.",dance:"Come here. Just one slow dance in the living room. No occasion, no reason. I just want to hold you.",movie:"You pick the film, I'll get us comfortable. I already know the best part will be having you curled up next to me.",talk:"Let's stay up a bit too late, telling each other stories until we forget what time it is. Those conversations are some of my favourite moments."};
     document.querySelectorAll("[data-mood]").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll("[data-mood]").forEach(function(x){x.classList.toggle("active",x===b)});id("roomMessage").textContent=moods[b.dataset.mood];tone(420)})});
 
-    // The Alicia manual: three little facts with precisely one right answer each.
-    var quizQuestions=[
-      {q:"How many ice cubes go in your water?",a:["None","Two","Exactly four","Six, just in case"],right:2,icon:"🧊 🧊 🧊 🧊",cap:"EXHIBIT A: FOUR CUBES. NOT THREE.",correct:"Four. Exactly four. I know this one without even thinking.",wrong:"Nope. It's four. FOUR. This is why I wrote it down."},
-      {q:"And how much ice goes in your fizzy drinks?",a:["One cube","Absolutely none","Four again","As much as possible"],right:1,icon:"🥤  🚫🧊",cap:"EXHIBIT B: THE NO-ICE-IN-FIZZY RULE.",correct:"None. Zero. Apparently this is a very important distinction.",wrong:"No ice in the fizzy. None. The rules are the rules."},
-      {q:"How many tiny marshmallows?",a:["One","Two","A whole handful","Exactly four"],right:3,icon:"☕ ☁️ ☁️ ☁️ ☁️",cap:"EXHIBIT C: FOUR TINY MARSHMALLOWS.",correct:"Four tiny marshmallows. I'm actually proud I remember that.",wrong:"Four. Tiny. Marshmallows. Another fact taking up space in my head."}
-    ];
-    var qi=0,completed=false;
-    function quizDraw(){
-      if(qi>=quizQuestions.length){
-        id("quizLabel").textContent="STUDY COMPLETE · 3 OF 3 FACTS REMEMBERED";
-        id("quizQuestion").textContent="Certified Alicia Expert (unofficial)";
-        id("quizOptions").innerHTML="";
-        var again=document.createElement("button");again.type="button";again.textContent="Take the extremely serious test again";again.addEventListener("click",function(){qi=0;quizDraw()});id("quizOptions").appendChild(again);
-        id("quizFeedback").textContent="You can check my working if you like. I pay attention because it's you.";
-        id("quizNext").style.display="none";id("cupContent").textContent="♡";id("cupCaption").textContent="CASE CLOSED: I REALLY LIKE YOU.";
-        return;
-      }
-      var q=quizQuestions[qi];completed=false;id("quizLabel").textContent="IMPORTANT QUESTION "+(qi+1)+" OF "+quizQuestions.length;
-      id("quizQuestion").textContent=q.q;id("quizOptions").innerHTML="";id("quizFeedback").textContent="";id("quizNext").style.display="none";
-      id("cupContent").textContent=q.icon;id("cupCaption").textContent=q.cap;
-      q.a.forEach(function(v,i){var btn=document.createElement("button");btn.type="button";btn.textContent=v;btn.addEventListener("click",function(){
-        if(completed)return;completed=true;
-        var all=id("quizOptions").querySelectorAll("button");
-        all.forEach(function(b,j){b.disabled=true;if(j===q.right)b.classList.add("correct");else if(j===i&&i!==q.right)b.classList.add("wrong")});
-        id("quizFeedback").textContent=i===q.right?q.correct:q.wrong;
-        id("quizNext").textContent=qi===quizQuestions.length-1?"See my official results ♡":"Next important question →";
-        id("quizNext").style.display="inline-flex";tone(i===q.right?660:370);
-      });id("quizOptions").appendChild(btn)});
-    }
-    id("quizNext").addEventListener("click",function(){qi++;quizDraw()});
-    quizDraw();
+
+    // Three small glimpses into the days I want to share with her.
+    var futureScenes={
+      road:{title:"somewhere new.",note:"I want to drive somewhere with you just because we can. Stop when we see something interesting, get something to eat, and come home with a story no one else would understand."},
+      home:{title:"our own little place.",note:"I'd like a home where your things are mixed up with mine, where we make dinner and leave mugs on the bench, and where I get to come home to you."},
+      years:{title:"still us.",note:"Years from now, I hope I still reach for your hand without thinking. I hope we still find each other funny. And I hope you still look at me like you did at the beginning."}
+    };
+    document.querySelectorAll("[data-future]").forEach(function(b){
+      if(b.tagName.toLowerCase()!=="button")return;
+      b.addEventListener("click",function(){
+        var key=b.dataset.future;
+        var sceneData=futureScenes[key];if(!sceneData)return;
+        id("futureArt").setAttribute("data-future",key);
+        id("futureArtTitle").textContent=sceneData.title;
+        id("futureNote").textContent=sceneData.note;
+        document.querySelectorAll(".future-choice").forEach(function(c){var on=c.dataset.future===key;c.classList.toggle("active",on);c.setAttribute("aria-pressed",String(on))});
+        tone(key==="road"?587:key==="home"?659:698);
+      });
+    });
+    id("futureWish").addEventListener("click",function(){meteor();toast("Here's to all the days we haven't had yet, Alicia ♡")});
     // The little emblem hides an extra line for anyone curious enough to tap it four times.
     var logoTaps=0,logoReset;
     document.querySelector(".brandmark").addEventListener("click",function(){
       logoTaps++;clearTimeout(logoReset);logoReset=setTimeout(function(){logoTaps=0},2500);
-      if(logoTaps===4){logoTaps=0;toast("P.S. I put you in my Instagram bio, but apparently that wasn't enough. ♡");meteor()}
+      if(logoTaps===4){logoTaps=0;toast("You found a hidden message. I love you more than I know how to code. ♡");meteor()}
     });
     roomState();
     // The letter is presented as a full paper surface, with focus return and Esc support.
